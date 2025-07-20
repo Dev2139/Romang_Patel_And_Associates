@@ -38,7 +38,7 @@ const teamMembers = [
   {
     name: 'Dr. I I Pandya',
     role: 'Legal Advisor',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752820162/lploedbjhmhoj4oaom0e.jpg',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753025495/jx423wn1zspeb9fccvpx.jpg',
     linkedin: 'https://linkedin.com/in/devpatel3',
     instagram: 'https://instagram.com/devpatel3',
   },

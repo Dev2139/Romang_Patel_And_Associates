@@ -58,8 +58,8 @@ const Footer = () => {
               <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> About Us</li>
               <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Contact Us</li>
               <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Our Services</li>
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Terms & Conditions</li>
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Support</li>
+              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Our Projects</li>
+              {/* <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Support</li> */}
             </ul>
           </div>
 

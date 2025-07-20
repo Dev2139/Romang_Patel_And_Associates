@@ -22,44 +22,44 @@ const socialLinks = [
 
 const teamMembers = [
   {
-    name: 'Dev Patel',
-    role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
+    name: 'Shailesh M. Patel',
+    role: 'Civil Engineer',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773759/fqr3kwezmwchjwfdwpyh.png',
     linkedin: 'https://linkedin.com/in/devpatel1',
     instagram: 'https://instagram.com/devpatel1',
   },
   {
-    name: 'Dev Patel',
-    role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
-    linkedin: 'https://linkedin.com/in/devpatel2',
-    instagram: 'https://instagram.com/devpatel2',
+    name: 'Romang Patel',
+    role: 'Principal Architect',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773974/jhzxdthwiryco7vmtzgw.png',
+    linkedin: 'https://www.linkedin.com/in/romang-patel-1702b7230/',
+    instagram: 'https://www.instagram.com/rome.sign',
   },
   {
-    name: 'Dev Patel',
-    role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
+    name: 'Dr. I I Pandya',
+    role: 'Legal Advisor',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753025495/jx423wn1zspeb9fccvpx.jpg',
     linkedin: 'https://linkedin.com/in/devpatel3',
     instagram: 'https://instagram.com/devpatel3',
   },
   {
-    name: 'Dev Patel',
-    role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
+    name: 'CodingGita',
+    role: 'Technical Support',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752774375/eeozcwyfcp3areuigs1f.png',
     linkedin: 'https://linkedin.com/in/devpatel4',
     instagram: 'https://instagram.com/devpatel4',
   },
   {
-    name: 'Dev Patel',
-    role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
+    name: 'Dr. Harsh Patel',
+    role: 'Vastu consultant',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753016169/g106wse7jiyt1mygdxyz.jpg',
     linkedin: 'https://linkedin.com/in/devpatel5',
     instagram: 'https://instagram.com/devpatel5',
   },
   {
     name: 'Dev Patel',
     role: 'Software Developer Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1740163433/oghzfeciil0bgedcfakf.jpg',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752820162/lploedbjhmhoj4oaom0e.jpg',
     linkedin: 'https://linkedin.com/in/devpatel6',
     instagram: 'https://instagram.com/devpatel6',
   },
@@ -105,7 +105,7 @@ const Section7 = () => (
   }}>
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-8">
-        <div className="text-[#00000] text-sm font-bold uppercase mb-2">Our Team Members</div>
+        <div className="text-[#f5a623] text-sm font-bold uppercase mb-2">Our Team Members</div>
         <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">Experienced Team Members</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,5 +1,5 @@
 import { FaUsers, FaCheck, FaAward, FaUserCog } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const CustomerSection = () => {
   const finalValues = {
@@ -15,8 +15,30 @@ const CustomerSection = () => {
     awards: 0,
     workers: 0,
   });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
     const duration = 2000; // 2 seconds
     const interval = 20; // Update every 20ms
     const steps = duration / interval;
@@ -37,7 +59,7 @@ const CustomerSection = () => {
       }
     }, interval);
     return () => clearInterval(counterInterval);
-  }, []);
+  }, [hasAnimated]);
 
   const stats = [
     {
@@ -67,7 +89,7 @@ const CustomerSection = () => {
   ];
 
   return (
-    <div className="w-full py-10 bg-[#EFE2D9]">
+    <div ref={sectionRef} className="w-full py-10 bg-[#EFE2D9]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

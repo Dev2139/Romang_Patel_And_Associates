@@ -1,4 +1,5 @@
 import { FaCheckCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Section3 = () => {
   return (
@@ -41,12 +42,12 @@ const Section3 = () => {
               Our work reflects versatility and thoughtful design.
             </div>
           </div>
-          <a
-            href="#"
+          <Link
+            to="/about"
             className="bg-[#E8D9CC] border border-black text-black rounded-full ml-[-2px] py-4 px-12 mt-2 inline-block text-center text-lg font-bold hover:bg-[#f5ece6] transition-colors shadow-sm w-full sm:w-auto mx-auto"
           >
             Discover More
-          </a>
+          </Link>
         </div>
       </div>
     </div>

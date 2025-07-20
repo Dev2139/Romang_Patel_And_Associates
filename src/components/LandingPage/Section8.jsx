@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { FaUser } from 'react-icons/fa';
 
 const ReviewCard = ({ name, location, review }) => (
   <div
@@ -6,7 +7,9 @@ const ReviewCard = ({ name, location, review }) => (
     style={{ boxShadow: '4px 8px 8px #b3a89a' }}
   >
     <div className="flex items-center mb-4">
-      <div className="w-14 h-14 sm:w-20 sm:h-20 bg-black rounded-full mr-4 flex-shrink-0" />
+      <div className="w-14 h-14 sm:w-20 sm:h-20 bg-black rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
+        <FaUser className="text-2xl sm:text-4xl" color="#d1bfa7" />
+      </div>
       <div>
         <h3 className="font-bold text-lg sm:text-2xl">{name}</h3>
         <p className="text-xs sm:text-sm text-black mt-[-2px]">{location}</p>
@@ -79,8 +82,13 @@ const Section8 = () => {
       </div>
       <div
         ref={scrollRef}
-        className="overflow-x-auto w-full max-w-[98vw] sm:max-w-[1280px] mx-auto"
-        style={{ height: '320px', scrollBehavior: 'smooth' }}
+        className="overflow-x-auto w-full max-w-[98vw] sm:max-w-[1280px] mx-auto hide-scrollbar"
+        style={{
+          height: '320px',
+          scrollBehavior: 'smooth',
+          scrollbarWidth: 'none', // Firefox
+          msOverflowStyle: 'none', // IE 10+
+        }}
       >
         <div className="flex flex-row space-x-4 sm:space-x-10 items-start mt-4">
           {reviews.map((review, idx) => (
@@ -93,6 +101,17 @@ const Section8 = () => {
           ))}
         </div>
       </div>
+      <style>
+        {`
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+          }
+        `}
+      </style>
     </div>
   );
 };

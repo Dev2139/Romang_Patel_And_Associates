@@ -76,12 +76,12 @@ const ServiceCard = ({ title, description, image, icon: Icon }) => (
       }}>
         {description}
       </p>
-      <button className="flex items-center text-black font-bold border border-black rounded-full px-5 py-2 hover:bg-gray-200 transition text-base">
+      {/* <button className="flex items-center text-black font-bold border border-black rounded-full px-5 py-2 hover:bg-gray-200 transition text-base">
         Read More
         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
         </svg>
-      </button>
+      </button> */}
     </div>
   </div>
 );
