@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import gallery3 from '../../assets/gallery-3.jpg';
 import gallery4 from '../../assets/gallery-4.jpg';
 import gallery5 from '../../assets/gallery-5.jpg';
@@ -37,7 +37,7 @@ const teamMembers = [
   },
   {
     name: 'Dr. I I Pandya',
-    role: 'Legal Advisor',
+    role: 'Structural consultant',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753025495/jx423wn1zspeb9fccvpx.jpg',
     linkedin: 'https://linkedin.com/in/devpatel3',
     instagram: 'https://instagram.com/devpatel3',
@@ -65,10 +65,10 @@ const teamMembers = [
   },
 ];
 
-const TeamMember = ({ name, role, img, linkedin, instagram }) => (
+const TeamMember = ({ name, role, img, linkedin, instagram, onImgClick }) => (
   <div className="bg-white rounded-tl-[24px] overflow-hidden shadow-lg min-h-[28rem] flex flex-col">
     <div className="flex flex-1 flex-col sm:flex-row">
-      <div className="w-full sm:w-3/4 h-64 sm:h-[24rem] bg-black rounded-tl-[20px] rounded-tr-[48px] rounded-bl-[20px] rounded-br-[20px] overflow-hidden">
+      <div className="w-full sm:w-3/4 h-[32rem] sm:h-[24rem] bg-black rounded-tl-[20px] rounded-tr-[48px] rounded-bl-[20px] rounded-br-[20px] overflow-hidden cursor-pointer" onClick={onImgClick}>
         <img src={img} alt={name} className="object-cover w-full h-full" />
       </div>
       <div className="w-full sm:w-1/4 flex flex-row sm:flex-col items-center justify-center gap-4 sm:gap-8 mt-4 sm:mt-56">
@@ -99,29 +99,45 @@ const TeamMember = ({ name, role, img, linkedin, instagram }) => (
   </div>
 );
 
-const Section7 = () => (
-  <div className="min-h-screen py-10 px-2 mt-4" style={{
-    background: 'linear-gradient(to right, #EFE2D9, #D6BFA7)'
-  }}>
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-8">
-        <div className="text-[#f5a623] text-sm font-bold uppercase mb-2">Our Team Members</div>
-        <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">Experienced Team Members</h1>
+const Section7 = () => {
+  const [modalImg, setModalImg] = useState(null);
+
+  const openModal = (img) => setModalImg(img);
+  const closeModal = () => setModalImg(null);
+
+  return (
+    <div className="min-h-screen py-10 px-2 mt-4" style={{
+      background: 'linear-gradient(to right, #EFE2D9, #D6BFA7)'
+    }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <div className="text-[#f5a623] text-sm font-bold uppercase mb-2">Our Team Members</div>
+          <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">Experienced Team Members</h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, idx) => (
+            <TeamMember
+              key={idx}
+              name={member.name}
+              role={member.role}
+              img={member.img}
+              linkedin={member.linkedin}
+              instagram={member.instagram}
+              onImgClick={() => openModal(member.img)}
+            />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, idx) => (
-          <TeamMember
-            key={idx}
-            name={member.name}
-            role={member.role}
-            img={member.img}
-            linkedin={member.linkedin}
-            instagram={member.instagram}
-          />
-        ))}
-      </div>
+      {modalImg && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={closeModal}>
+          <div className="relative max-w-full max-h-full p-4" onClick={e => e.stopPropagation()}>
+            <button onClick={closeModal} className="absolute top-2 right-2 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80">&times;</button>
+            <img src={modalImg} alt="Team member" className="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg" />
+          </div>
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 export default Section7;
