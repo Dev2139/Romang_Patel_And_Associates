@@ -7,14 +7,14 @@ const Section3 = () => {
         {/* Left: Image */}
         <div className="w-full md:w-1/2 h-[300px] md:h-auto relative min-h-[400px]">
           <img
-            src="https://res.cloudinary.com/dsddldquo/image/upload/v1752745435/vsb4qaylzqlxykyxqqyl.png"
+            src="https://res.cloudinary.com/dsddldquo/image/upload/v1740201691/zamytzw91ta0uiazna89.webp"
             alt="About Us"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
         {/* Right: Content */}
         <div className="w-full md:w-1/2 flex flex-col justify-center bg-gradient-to-r from-[#EFE2D9] to-[#D6BFA7] py-8 px-4 sm:px-8 md:py-16 md:px-16">
-          <h6 className="text-[#f5a623] text-base font-bold mb-2">About Us</h6>
+          <h6 className="text-black text-base font-bold mb-2">About Us</h6>
           <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-black">
             Design Spaces for Over 30 Years – Where Vision Meets Precision
           </h1>
@@ -41,12 +41,12 @@ const Section3 = () => {
               Our work reflects versatility and thoughtful design.
             </div>
           </div>
-          <a
+          {/* <a
             href="#"
             className="bg-[#E8D9CC] border border-black text-black rounded-full ml-[-2px] py-4 px-12 mt-2 inline-block text-center text-lg font-bold hover:bg-[#f5ece6] transition-colors shadow-sm w-full sm:w-auto mx-auto"
           >
             Discover More
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

@@ -73,7 +73,7 @@ const Section8 = () => {
       className="min-h-[70vh] flex flex-col items-center justify-start pt-8 px-2 mt-4"
       style={{ background: 'linear-gradient(90deg, #D6BFA7 0%, #EFE2D9 100%)' }}
     >
-      <div className="text-[#00000] text-xs sm:text-sm font-bold uppercase mb-2">Our Client Reviews</div>
+      <div className="text-[#f5a623] text-xs sm:text-sm font-bold uppercase mb-2">Our Client Reviews</div>
       <div className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">
         See What Our Clients says <br className="hidden sm:block" /> About Us
       </div>

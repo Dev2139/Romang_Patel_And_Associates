@@ -6,16 +6,16 @@ import Slide3 from '../../assets/gallery-5.jpg';
 
 // Placeholder images (replace with your actual image URLs)
 const carouselImages = [
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740489186/tpmhx6txck0h5i0n3pr8.avif',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740198594/t58pqt4rg3mv2qb33gmn.jpg',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740489223/wxc395qoedhlmrtiyccs.avif',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752655780/dbczh699qhh2mh0k3agg.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656051/to1hdnmg8eivnlkitnlt.jpg',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656240/wnr6dnde0vusgo0cdfoc.png',
 ];
 
 // Thumbnails for the dots
 const thumbnailImages = [
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740489186/tpmhx6txck0h5i0n3pr8.avif',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740198594/t58pqt4rg3mv2qb33gmn.jpg',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1740489223/wxc395qoedhlmrtiyccs.avif',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752655780/dbczh699qhh2mh0k3agg.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656051/to1hdnmg8eivnlkitnlt.jpg',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656240/wnr6dnde0vusgo0cdfoc.png',
 ];
 
 const carouselContent = [
@@ -105,12 +105,7 @@ const HeaderCarousel = () => {
                     <p className="text-xs sm:text-sm md:text-lg font-medium text-black mt-4 md:mt-6 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl animate-slideInDown drop-shadow-2xl">
                       {carouselContent[index].description}
                     </p>
-                    <a
-                      href="#"
-                      className="inline-block bg-[#E8D9CC] border-2 text-black font-semibold rounded-full py-2 px-6 sm:py-3 sm:px-8 md:py-4 md:px-10 hover:bg-white transition-all animate-slideInLeft text-xs sm:text-base md:text-lg"
-                    >
-                      Read More
-                    </a>
+                    
                   </div>
                 </div>
               </div>
@@ -120,25 +115,25 @@ const HeaderCarousel = () => {
       </div>
 
       {/* Custom Dots (Thumbnails) */}
-      <div className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
-        {thumbnailImages.map((thumbnail, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
-              currentSlide === index 
-                ? 'border-white scale-110 ring-4 ring-white/50' 
-                : 'border-gray-300 opacity-70 hover:opacity-100'
-            }`}
-          >
-            <img
-              src={thumbnail}
-              alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </button>
-        ))}
-      </div>
+        {/* <div className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
+          {thumbnailImages.map((thumbnail, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'border-white scale-110 ring-4 ring-white/50' 
+                  : 'border-gray-300 opacity-70 hover:opacity-100'
+              }`}
+            >
+              <img
+                src={thumbnail}
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
+        </div> */}
 
       {/* Inline styles for animations (minimal CSS since Tailwind doesn't support keyframes) */}
       <style>

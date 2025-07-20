@@ -6,34 +6,34 @@ import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 
 const images = [
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752659885/uvex88bp84cqto10betd.png",
-    title: 'Project 1',
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740489209/hgnnui5dcbk4xxoemfvz.avif",
+    title: 'Project One',
     info: 'Info about Project One, Location A',
   },
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752659879/s8wtncqcyjq5hrd0crrx.png",
-    title: 'Project 2',
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740489194/qbwr3opoj8n65lrshqzj.avif",
+    title: 'Project Two',
     info: 'Info about Project Two, Location B',
   },
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png",
-    title: 'Project 3',
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740201691/zamytzw91ta0uiazna89.webp",
+    title: 'Project Three',
     info: 'Info about Project Three, Location C',
   },
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752659861/ifcsgqkn9qkqb3yxzsay.png",
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740489209/hgnnui5dcbk4xxoemfvz.avif",
     title: 'Project 4',
-    info: 'Info about Project Four, Location A',
+    info: 'Info about Project One, Location A',
   },
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752660034/h2yfvtcbke4ktqfusikm.png",
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740489194/qbwr3opoj8n65lrshqzj.avif",
     title: 'Project 5',
-    info: 'Info about Project Five, Location B',
+    info: 'Info about Project Two, Location B',
   },
   {
-    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1752659856/ulxgy9p49hhkmqxb1vnb.png",
+    src: "https://res.cloudinary.com/dsddldquo/image/upload/v1740201691/zamytzw91ta0uiazna89.webp",
     title: 'Project 6',
-    info: 'Info about Project Six, Location C',
+    info: 'Info about Project Three, Location C',
   },
 ];
 
@@ -69,19 +69,21 @@ const Projects = () => {
     }
   };
 
+  // Helper to get card index with wrap-around for any number of projects
   const getCard = (offset) => {
     return images[(centerIndex + offset + images.length) % images.length];
   };
 
+ 
   const showLeft = images.length > 1;
   const showRight = images.length > 2;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start px-2 sm:px-4 mt-4 py-12" style={{
+    <div className="min-h-screen flex flex-col items-center justify-start px-2 sm:px-4 mt-[-1000px] py-12 " style={{
       background: 'linear-gradient(90deg, #D6BFA7 0%, #EFE2D9 100%)'
     }}>
       <div className="text-center mb-10 mt-4">
-        <h6 className="text-[#f5a623] text-sm font-bold uppercase mb-2">Our Projects</h6>
+        <h6 className="text-[#00000] text-sm font-bold uppercase mb-2">Our Projects</h6>
         <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">Visit Our Latest Projects</h1>
       </div>
       <div className="relative flex flex-row items-center justify-center w-full max-w-7xl">
@@ -105,7 +107,7 @@ const Projects = () => {
               <img src={getCard(-1).src} alt={getCard(-1).title} className="w-full h-full object-cover" />
             </div>
           )}
-
+          {/* Center Card */}
           <div
             className={`relative w-40 sm:w-[32rem] h-56 sm:h-[26rem] bg-black rounded-2xl shadow-2xl flex-shrink-0 flex items-end overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
             aria-live="polite"
@@ -119,7 +121,7 @@ const Projects = () => {
               <button className="mt-2 px-4 py-2 bg-white bg-opacity-90 text-black font-semibold rounded-lg shadow hover:bg-opacity-100 transition text-sm sm:text-base">View Details</button>
             </div>
           </div>
-         
+          {/* Right Card (only show if more than 2 projects) */}
           {showRight && (
             <div className={`w-32 sm:w-72 h-40 sm:h-80 bg-black rounded-2xl shadow-xl flex-shrink-0 overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
               style={{ opacity: 0.7 }}

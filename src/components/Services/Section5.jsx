@@ -19,7 +19,7 @@ const WhyChooseUs = () => (
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 h-full">
         <div className="py-8 px-4 sm:px-6 lg:px-8 h-full lg:col-span-2">
           <div className="h-full">
-            <h6 className="text-[#f5a623] text-sm font-bold uppercase mb-2">
+            <h6 className="text-[#00000] text-sm font-bold uppercase mb-2">
               Why Choose Us
             </h6>
             <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">
