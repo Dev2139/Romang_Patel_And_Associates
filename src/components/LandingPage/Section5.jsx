@@ -61,7 +61,7 @@ const WhyChooseUs = () => (
         <div className="hidden lg:block h-full lg:col-span-3">
           <div className="relative h-full">
             <img 
-              src="https://res.cloudinary.com/dsddldquo/image/upload/v1740201691/zamytzw91ta0uiazna89.webp" 
+              src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png" 
               alt="Modern Interior Design"
               className="absolute inset-0 w-full h-[780px] mt-[-80px] object-cover"
             />

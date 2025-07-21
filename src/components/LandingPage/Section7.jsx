@@ -60,12 +60,13 @@ const teamMembers = [
     name: 'Dev Patel',
     role: 'Software Developer Engineer',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752820162/lploedbjhmhoj4oaom0e.jpg',
+    portfolio: 'https://devpatel-portfolioandcontacts.netlify.app/', 
     linkedin: 'https://linkedin.com/in/devpatel6',
-    instagram: 'https://instagram.com/devpatel6',
+    
   },
 ];
 
-const TeamMember = ({ name, role, img, linkedin, instagram, onImgClick }) => (
+const TeamMember = ({ name, role, img, linkedin, instagram, portfolio, onImgClick }) => (
   <div className="bg-white rounded-tl-[24px] overflow-hidden shadow-lg min-h-[28rem] flex flex-col">
     <div className="flex flex-1 flex-col sm:flex-row">
       <div className="w-full sm:w-3/4 h-[32rem] sm:h-[24rem] bg-black rounded-tl-[20px] rounded-tr-[48px] rounded-bl-[20px] rounded-br-[20px] overflow-hidden cursor-pointer" onClick={onImgClick}>
@@ -81,15 +82,30 @@ const TeamMember = ({ name, role, img, linkedin, instagram, onImgClick }) => (
           {/* LinkedIn SVG */}
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2 3.6 4.59v5.606z"/></svg>
         </a>
-        <a
-          href={instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 bg-[#d2bda7] rounded-full shadow-md flex items-center justify-center hover:bg-[#bfa07a] transition-colors"
-        >
-          {/* Instagram SVG */}
-          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608-.058-1.266-.069-1.646-.069-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.259 0-3.667.012-4.947.07-1.276.058-2.687.334-3.678 1.325-.991.991-1.267 2.402-1.325 3.678-.058 1.28-.07 1.688-.07 4.947s.012 3.667.07 4.947c.058 1.276.334 2.687 1.325 3.678.991.991 2.402 1.267 3.678 1.325 1.28.058 1.688.07 4.947.07s3.667-.012 4.947-.07c1.276-.058 2.687-.334 3.678-1.325.991-.991 1.267-2.402 1.325-3.678.058-1.28.07-1.688.07-4.947s-.012-3.667-.07-4.947c-.058-1.276-.334-2.687-1.325-3.678-.991-.991-2.402-1.267-3.678-1.325-1.28-.058-1.688-.07-4.947-.07zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
+        {/* Only show Instagram if present */}
+        {instagram && (
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-[#d2bda7] rounded-full shadow-md flex items-center justify-center hover:bg-[#bfa07a] transition-colors"
+          >
+            {/* Instagram SVG */}
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608-.058-1.266-.069-1.646-.069-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.259 0-3.667.012-4.947.07-1.276.058-2.687.334-3.678 1.325-.991.991-1.267 2.402-1.325 3.678-.058 1.28-.07 1.688-.07 4.947s.012 3.667.07 4.947c.058 1.276.334 2.687 1.325 3.678.991.991 2.402 1.267 3.678 1.325 1.28.058 1.688.07 4.947.07s3.667-.012 4.947-.07c1.276-.058 2.687-.334 3.678-1.325.991-.991 1.267-2.402 1.325-3.678.058-1.28.07-1.688.07-4.947s-.012-3.667-.07-4.947c-.058-1.276-.334-2.687-1.325-3.678-.991-.991-2.402-1.267-3.678-1.325-1.28-.058-1.688-.07-4.947-.07zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        )}
+        {portfolio && (
+          <a
+            href={portfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-[#d2bda7] rounded-full shadow-md flex items-center justify-center hover:bg-[#bfa07a] transition-colors"
+            title="Portfolio"
+          >
+            {/* Portfolio SVG (globe/world icon) */}
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c1.657 0 3.156.672 4.242 1.758A5.978 5.978 0 0 1 20 12c0 1.657-.672 3.156-1.758 4.242A5.978 5.978 0 0 1 12 20a5.978 5.978 0 0 1-4.242-1.758A5.978 5.978 0 0 1 4 12c0-1.657.672-3.156 1.758-4.242A5.978 5.978 0 0 1 12 4zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 2c-1.104 0-2 .896-2 2h4c0-1.104-.896-2-2-2zm-2 4v2h4v-2h-4zm0 4v2c0 1.104.896 2 2 2s2-.896 2-2v-2h-4z"/></svg>
+          </a>
+        )}
       </div>
     </div>
     <div className="p-4 text-left">
@@ -123,6 +139,7 @@ const Section7 = () => {
               img={member.img}
               linkedin={member.linkedin}
               instagram={member.instagram}
+              portfolio={member.portfolio}
               onImgClick={() => openModal(member.img)}
             />
           ))}

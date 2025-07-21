@@ -9,7 +9,7 @@ const QuoteForm = () => {
     <div className="min-h-[400px] flex bg-gradient-to-r from-[#f3e6dd] to-[#e2ccb3] mt-4">
       {/* Left: Image */}
       <div className="hidden md:block w-1/2 h-auto relative">
-        <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1740489194/qbwr3opoj8n65lrshqzj.avif" alt="Quote" className="w-full h-full object-cover" />
+        <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659885/uvex88bp84cqto10betd.png" alt="Quote" className="w-full h-full object-cover" />
       </div>
       {/* Right: Form */}
       <div className="w-full md:w-1/2 flex items-center justify-end">
