@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import gallery3 from '../../assets/gallery-3.jpg';
 import gallery4 from '../../assets/gallery-4.jpg';
 import gallery5 from '../../assets/gallery-5.jpg';
@@ -140,6 +140,19 @@ const TeamMember = ({ name, role, img, linkedin, instagram, portfolio, onImgClic
 const Section7 = () => {
   const [modalImg, setModalImg] = useState(null);
   const [infoCardIdx, setInfoCardIdx] = useState(null); // New state for info card
+
+  // Disable background scroll when modal or info card is open
+  useEffect(() => {
+    if (modalImg !== null || infoCardIdx !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [modalImg, infoCardIdx]);
 
   const openModal = (img) => setModalImg(img);
   const closeModal = () => setModalImg(null);
