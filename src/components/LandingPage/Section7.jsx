@@ -27,6 +27,10 @@ const teamMembers = [
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773759/fqr3kwezmwchjwfdwpyh.png',
     linkedin: 'https://linkedin.com/in/devpatel1',
     instagram: 'https://instagram.com/devpatel1',
+    bio: [
+      'Shailesh M. Patel is a highly experienced civil engineer with over 20 years in the industry.',
+      'He has led numerous large-scale infrastructure projects and is known for his attention to detail and commitment to quality.'
+    ]
   },
   {
     name: 'Romang Patel',
@@ -34,13 +38,21 @@ const teamMembers = [
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773974/jhzxdthwiryco7vmtzgw.png',
     linkedin: 'https://www.linkedin.com/in/romang-patel-1702b7230/',
     instagram: 'https://www.instagram.com/rome.sign',
+    bio: [
+      'Romang Patel is a visionary architect with a passion for sustainable and innovative design.',
+      'He has worked on a variety of commercial and residential projects, always pushing the boundaries of creativity.'
+    ]
   },
   {
     name: 'Dr. I I Pandya',
-    role: 'Structural consultant',
+    role: 'Structural consultant',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753025495/jx423wn1zspeb9fccvpx.jpg',
     linkedin: 'https://linkedin.com/in/devpatel3',
     instagram: 'https://instagram.com/devpatel3',
+    bio: [
+      'Dr. I I Pandya is a renowned structural consultant with a PhD in structural engineering.',
+      'He has contributed to the safety and stability of many landmark buildings.'
+    ]
   },
   {
     name: 'CodingGita',
@@ -48,6 +60,9 @@ const teamMembers = [
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752774375/eeozcwyfcp3areuigs1f.png',
     linkedin: 'https://linkedin.com/in/devpatel4',
     instagram: 'https://instagram.com/devpatel4',
+    bio: [
+      'CodingGita is an educational institution focused on technology, specifically bridging the gap between academic learning and industry practices. They offer programs designed to equip students with practical skills and insights relevant to the tech industry, with a strong emphasis on real-world applications and project-based learning. According to CodingGita, their goal is to make students valuable assets in the technology sector. ',
+    ]
   },
   {
     name: 'Dr. Harsh Patel',
@@ -55,6 +70,10 @@ const teamMembers = [
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753016169/g106wse7jiyt1mygdxyz.jpg',
     linkedin: 'https://linkedin.com/in/devpatel5',
     instagram: 'https://instagram.com/devpatel5',
+    bio: [
+      'Dr. Harsh Patel is a leading Vastu consultant, helping clients achieve harmony in their living and working spaces.',
+      'He combines traditional wisdom with modern science for optimal results.'
+    ]
   },
   {
     name: 'Dev Patel',
@@ -62,26 +81,29 @@ const teamMembers = [
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752820162/lploedbjhmhoj4oaom0e.jpg',
     portfolio: 'https://devpatel-portfolioandcontacts.netlify.app/', 
     linkedin: 'https://linkedin.com/in/devpatel6',
-    
+    bio: [
+      'Dev Patel is a skilled software developer engineer with a strong background in web and mobile applications.',
+      'He is passionate about building scalable, user-friendly solutions and is always eager to learn new technologies.'
+    ]
   },
 ];
 
-const TeamMember = ({ name, role, img, linkedin, instagram, portfolio, onImgClick }) => (
+const TeamMember = ({ name, role, img, linkedin, instagram, portfolio, onImgClick, onInfoClick }) => (
   <div className="bg-white rounded-tl-[24px] overflow-hidden shadow-lg min-h-[28rem] flex flex-col">
     <div className="flex flex-1 flex-col sm:flex-row">
       <div className="w-full sm:w-3/4 h-[32rem] sm:h-[24rem] bg-black rounded-tl-[20px] rounded-tr-[48px] rounded-bl-[20px] rounded-br-[20px] overflow-hidden cursor-pointer" onClick={onImgClick}>
         <img src={img} alt={name} className="object-cover w-full h-full" />
       </div>
       <div className="w-full sm:w-1/4 flex flex-row sm:flex-col items-center justify-center gap-4 sm:gap-8 mt-4 sm:mt-56">
-        <a
-          href={linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Info Icon */}
+        <button
+          onClick={onInfoClick}
           className="w-12 h-12 bg-[#d2bda7] rounded-full shadow-md flex items-center justify-center hover:bg-[#bfa07a] transition-colors mb-0 sm:mb-2"
+          title="More Info"
         >
-          {/* LinkedIn SVG */}
-          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2 3.6 4.59v5.606z"/></svg>
-        </a>
+          {/* Info SVG */}
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-7h2v5h-2zm0-6h2v2h-2z"/></svg>
+        </button>
         {/* Only show Instagram if present */}
         {instagram && (
           <a
@@ -117,9 +139,12 @@ const TeamMember = ({ name, role, img, linkedin, instagram, portfolio, onImgClic
 
 const Section7 = () => {
   const [modalImg, setModalImg] = useState(null);
+  const [infoCardIdx, setInfoCardIdx] = useState(null); // New state for info card
 
   const openModal = (img) => setModalImg(img);
   const closeModal = () => setModalImg(null);
+  const openInfoCard = (idx) => setInfoCardIdx(idx);
+  const closeInfoCard = () => setInfoCardIdx(null);
 
   return (
     <div className="min-h-screen py-10 px-2 mt-4" style={{
@@ -141,15 +166,36 @@ const Section7 = () => {
               instagram={member.instagram}
               portfolio={member.portfolio}
               onImgClick={() => openModal(member.img)}
+              onInfoClick={() => openInfoCard(idx)}
             />
           ))}
         </div>
       </div>
       {modalImg && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={closeModal}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm" onClick={closeModal}>
           <div className="relative max-w-full max-h-full p-4" onClick={e => e.stopPropagation()}>
             <button onClick={closeModal} className="absolute top-2 right-2 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80">&times;</button>
             <img src={modalImg} alt="Team member" className="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg" />
+          </div>
+        </div>
+      )}
+      {/* Info Card Popover */}
+      {infoCardIdx !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md" onClick={closeInfoCard}>
+          <div className="relative bg-white bg-opacity-30 rounded-lg shadow-2xl w-full max-w-3xl mx-4 md:mx-auto flex flex-col md:flex-row overflow-hidden" onClick={e => e.stopPropagation()}>
+            <button onClick={closeInfoCard} className="absolute top-2 right-2 text-gray-700 text-3xl font-bold bg-white bg-opacity-70 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90">&times;</button>
+            {/* Person's Image */}
+            <div className="md:w-1/2 w-full flex items-center justify-center bg-gray-100 p-8 min-h-[28rem]">
+              <img src={teamMembers[infoCardIdx].img} alt={teamMembers[infoCardIdx].name} className="object-cover rounded-lg w-80 h-96 shadow-lg" />
+            </div>
+            {/* Info Section */}
+            <div className="md:w-1/2 w-full flex flex-col justify-center p-6">
+              <h2 className="text-3xl font-bold mb-2 text-gray-900">{teamMembers[infoCardIdx].name}</h2>
+              <p className="text-lg text-[#f5a623] font-semibold mb-4">{teamMembers[infoCardIdx].role}</p>
+              {teamMembers[infoCardIdx].bio && teamMembers[infoCardIdx].bio.map((para, i) => (
+                <p key={i} className="text-gray-700 mb-2">{para}</p>
+              ))}
+            </div>
           </div>
         </div>
       )}
