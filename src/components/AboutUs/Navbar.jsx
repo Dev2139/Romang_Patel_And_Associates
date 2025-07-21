@@ -14,14 +14,13 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="flex items-center gap-3 px-2 py-1 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
         <img
-          src="https://res.cloudinary.com/dsddldquo/image/upload/v1753016872/c9nnmyty4zsk5jj8ck0l.jpg"
+          src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
           alt="Logo"
-          className="w-12 h-12 rounded-full object-cover border-4 border-[#8B5C2A] shadow-lg transition-transform duration-300 hover:scale-110"
-          style={{ background: '#fff' }}
+          className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110"
         />
         <span>
           <span className="text-[#8B5C2A]">ROMANG</span>
-          <span className="text-[#222]"> PATEL</span>
+          <span className="text-[#8B5C2A]"> PATEL</span>
           <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
         </span>
       </Link>

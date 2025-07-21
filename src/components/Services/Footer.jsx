@@ -1,31 +1,30 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowRight, FaRegCopyright, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram, FaWhatsapp, FaLaptopCode } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const Footer = () => {
   const form = useRef();
   const [status, setStatus] = useState('');
+  const [email, setEmail] = useState('');
 
-  const sendEmail = (e) => {
+  const validateEmail = (email) => {
+    // Simple email regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     setStatus('');
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        form.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      )
-      .then(
-        (result) => {
-          setStatus('Subscribed successfully!');
-          form.current.reset();
-        },
-        (error) => {
-          setStatus('Failed to subscribe. Please try again.');
-        }
-      );
+    if (!email) {
+      setStatus('Please enter your email.');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setStatus('Please enter a valid email address.');
+      return;
+    }
+    // Redirect to Google Drive link
+    window.location.href = 'https://drive.google.com/'; // Replace with your actual Google Drive link
   };
 
   return (
@@ -39,12 +38,30 @@ const Footer = () => {
             <ul className="space-y-2 text-base">
               <li className="flex items-center gap-2"><FaMapMarkerAlt /> Vadodra Office Address</li>
               <li className="flex items-center gap-2"><FaMapMarkerAlt /> Vadodra Office Address</li>
-              <li className="flex items-center gap-2"><FaPhoneAlt /> +91 982421 99727</li>
-              <li className="flex items-center gap-2"><FaEnvelope /> romangpatel123@yahoo.com</li>
+              <li className="flex items-center gap-2">
+                <FaPhoneAlt />
+                <a
+                  href="tel:+9198242199727"
+                  className="hover:underline text-blue-700"
+                >
+                  +91 982421 99727
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaEnvelope />
+                <a
+                  href="mailto:romangpatel123@yahoo.com"
+                  className="hover:underline text-blue-700"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  romangpatel123@yahoo.com
+                </a>
+              </li>
             </ul>
             {/* Social Icons */}
             <div className="flex items-center gap-3 mt-6">
-              <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#1da1f2] transition-colors" aria-label="Twitter"><FaTwitter /></a>
+              {/* <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#1da1f2] transition-colors" aria-label="Twitter"><FaTwitter /></a> */}
               <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#0077b5] transition-colors" aria-label="LinkedIn"><FaLinkedinIn /></a>
               <a href=" https://wa.me/919824219727" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#ff0000] transition-colors" aria-label="Whatsapp"><FaWhatsapp /></a>
               <a href="https://www.instagram.com/rome.sign" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#e1306c] transition-colors" aria-label="Instagram"><FaInstagram /></a>
@@ -83,13 +100,15 @@ const Footer = () => {
           <div className="flex-1 min-w-[220px]">
             <h2 className="text-lg font-bold mb-2">Newsletter</h2>
             <p className="mb-3 text-base">Subscribe to our newsletter for exclusive project showcases, design inspiration, industry news, and invitations to special events. Stay connected with Romang Patel & Associates and be the one to see our latest architectural creations!</p>
-            <form ref={form} onSubmit={sendEmail} className="flex items-center bg-white rounded shadow px-2 py-1">
+            <form ref={form} onSubmit={handleNewsletterSubmit} className="flex items-center bg-white rounded shadow px-2 py-1">
               <input
                 type="email"
                 name="user_email"
                 placeholder="Your Email"
                 className="flex-1 bg-transparent outline-none px-2 py-1 text-base"
                 required
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
               <button type="submit" className="text-[#a3856a] text-xl p-1"><FaArrowRight /></button>
             </form>
