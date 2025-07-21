@@ -63,7 +63,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mt-6">
               {/* <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#1da1f2] transition-colors" aria-label="Twitter"><FaTwitter /></a> */}
               <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#0077b5] transition-colors" aria-label="LinkedIn"><FaLinkedinIn /></a>
-              <a href=" https://wa.me/919824219727" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#ff0000] transition-colors" aria-label="Whatsapp"><FaWhatsapp /></a>
+              <a href=" https://wa.me/919824219727" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#4caf50] transition-colors" aria-label="Whatsapp"><FaWhatsapp /></a>
               <a href="https://www.instagram.com/rome.sign" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#e1306c] transition-colors" aria-label="Instagram"><FaInstagram /></a>
             </div>
           </div>

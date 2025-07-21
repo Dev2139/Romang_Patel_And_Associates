@@ -87,6 +87,64 @@ const ServiceCard = ({ title, description, image, icon: Icon }) => (
 );
 
 const Section4 = () => {
+  // Drag-to-scroll logic
+  const scrollRef = React.useRef(null);
+  const isDragging = React.useRef(false);
+  const startX = React.useRef(0);
+  const scrollLeft = React.useRef(0);
+
+  React.useEffect(() => {
+    const slider = scrollRef.current;
+    if (!slider) return;
+
+    const onMouseDown = (e) => {
+      isDragging.current = true;
+      slider.classList.add('scrolling');
+      slider.classList.add('pause-animation');
+      startX.current = e.pageX - slider.offsetLeft;
+      scrollLeft.current = slider.scrollLeft;
+    };
+    const onMouseLeave = () => {
+      isDragging.current = false;
+      slider.classList.remove('scrolling');
+      slider.classList.remove('pause-animation');
+    };
+    const onMouseUp = () => {
+      isDragging.current = false;
+      slider.classList.remove('scrolling');
+      slider.classList.remove('pause-animation');
+    };
+    const onMouseMove = (e) => {
+      if (!isDragging.current) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX.current) * 1.5; // scroll-fast
+      slider.scrollLeft = scrollLeft.current - walk;
+    };
+    // Touch events for mobile
+    const onTouchStart = () => {
+      slider.classList.add('pause-animation');
+    };
+    const onTouchEnd = () => {
+      slider.classList.remove('pause-animation');
+    };
+    slider.addEventListener('mousedown', onMouseDown);
+    slider.addEventListener('mouseleave', onMouseLeave);
+    slider.addEventListener('mouseup', onMouseUp);
+    slider.addEventListener('mousemove', onMouseMove);
+    slider.addEventListener('touchstart', onTouchStart);
+    slider.addEventListener('touchend', onTouchEnd);
+    // Clean up
+    return () => {
+      slider.removeEventListener('mousedown', onMouseDown);
+      slider.removeEventListener('mouseleave', onMouseLeave);
+      slider.removeEventListener('mouseup', onMouseUp);
+      slider.removeEventListener('mousemove', onMouseMove);
+      slider.removeEventListener('touchstart', onTouchStart);
+      slider.removeEventListener('touchend', onTouchEnd);
+    };
+  }, []);
+
   return (
     <div className="py-12 mt-5" style={{ background: 'linear-gradient(to right, #D6BFA7, #EFE2D9)' }}>
       <div className="max-w-7xl mx-auto px-4">
@@ -95,12 +153,10 @@ const Section4 = () => {
           <h1 className="text-4xl font-bold mt-2">Expertise Across Every Architectural Typology</h1>
         </div>
         <div className="relative overflow-hidden">
-          <div 
-            className="flex animate-scroll"
-            style={{
-              width: 'fit-content',
-              animation: 'scroll 40s linear infinite',
-            }}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto whitespace-nowrap cursor-grab scrollbar-thin scrollbar-thumb-[#E4CBBA] scrollbar-track-[#EFE2D9] animate-scroll"
+            style={{ width: 'fit-content', animation: 'scroll 40s linear infinite' }}
           >
             {services.map((service, index) => (
               <ServiceCard
@@ -125,15 +181,18 @@ const Section4 = () => {
       </div>
       <style jsx>{`
         @keyframes scroll {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
+          to {
             transform: translateX(-50%);
           }
         }
         .animate-scroll {
           animation: scroll 40s linear infinite;
+        }
+        .animate-scroll.pause-animation {
+          animation-play-state: paused !important;
         }
         .animate-scroll:hover {
           animation-play-state: paused;

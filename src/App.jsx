@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs/About';
 import Services from './components/Services/Services';
 import Projects from './components/Projects/Projects';
 import Contacts from './components/Contacts/Contacts';
+import Quote from './components/Quote/Contacts'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contacts />} />
+        <Route path="/quote" element={<Quote />} />
       </Routes>
     </BrowserRouter>
   );
