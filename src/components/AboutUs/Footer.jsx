@@ -1,6 +1,7 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowRight, FaRegCopyright, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram, FaWhatsapp, FaLaptopCode } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const form = useRef();
@@ -33,7 +34,18 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between gap-8">
           {/* Logo & Address */}
           <div className="flex-1 min-w-[200px]">
-            <h1 className="text-4xl font-bold mb-4">LOGO</h1>
+          <Link to="/" className="flex items-center gap-3 px-2 py-1 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
+        <img
+          src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
+          alt="Logo"
+          className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110"
+        />
+        <span>
+          <span className="text-[#8B5C2A]">ROMANG</span>
+          <span className="text-[#8B5C2A]"> PATEL</span>
+          <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
+        </span>
+      </Link>
             <h2 className="text-lg font-bold mb-2">Address</h2>
             <ul className="space-y-2 text-base">
               <li className="flex items-center gap-2"><FaMapMarkerAlt /> Vadodra Office Address</li>
