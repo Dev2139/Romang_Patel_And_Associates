@@ -29,7 +29,7 @@ const Section3 = () => {
   const loaderRef = useRef(null);
 
   useEffect(() => {
-    fetch("./src/components/Projects/projects.json")
+    fetch("./projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data));
   }, []);
