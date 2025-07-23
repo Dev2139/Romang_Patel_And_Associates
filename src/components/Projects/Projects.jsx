@@ -9,7 +9,7 @@ import Footer from './Footer'
 
 
 
-const AboutUs = () => {
+const Projects = () => {
   return (
     <div className='bg-[#EFE2D9]'>
         {/* Navbar start */}
@@ -24,4 +24,4 @@ const AboutUs = () => {
   )
 }
 
-export default AboutUs
+export default Projects
