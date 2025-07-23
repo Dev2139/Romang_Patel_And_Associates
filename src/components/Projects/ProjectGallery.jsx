@@ -50,8 +50,9 @@ const ProjectGallery = () => {
           <div className="text-center text-xs text-gray-500 mb-4">{project.subcategory}</div>
         )}
         <div
-          className={`grid gap-4 ${project.images.length <= 4 ? 'grid-cols-2' : 'grid-cols-3'}`}
-          style={{ gridTemplateColumns: project.images.length === 4 ? 'repeat(2, 1fr)' : project.images.length >= 5 ? 'repeat(3, 1fr)' : undefined }}
+          className={`grid gap-4 
+            grid-cols-2
+            md:${project.images.length <= 4 ? 'grid-cols-2' : project.images.length <= 6 ? 'grid-cols-3' : 'grid-cols-4'}`}
         >
           {project.images.map((img, idx) => (
             <img
