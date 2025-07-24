@@ -73,8 +73,8 @@ const Section3 = () => {
             key={cat}
             className={`px-4 py-2 rounded-full border transition-colors duration-200 text-sm font-medium ${
               selectedCategory === cat
-                ? "bg-blue-600 text-white border-blue-600"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-blue-100"
+                ? "bg-[#E8D9CC] text-black border-[#E8D9CC]"
+                : "bg-transparent text-gray-700 border-gray-300 hover:bg-[#E8D9CC]/50"
             }`}
             onClick={() => setSelectedCategory(cat)}
           >
@@ -91,8 +91,8 @@ const Section3 = () => {
               key={subcat}
               className={`px-3 py-1 rounded-full border transition-colors duration-200 text-xs font-medium ${
                 selectedSubcategory === subcat
-                  ? "bg-green-600 text-white border-green-600"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-green-100"
+                  ? "bg-[#E8D9CC] text-black border-[#E8D9CC]"
+                  : "bg-transparent text-gray-700 border-gray-300 hover:bg-[#E8D9CC]/50"
               }`}
               onClick={() => setSelectedSubcategory(subcat)}
             >
