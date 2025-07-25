@@ -82,15 +82,36 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex-1 min-w-[180px]">
-            <h2 className="text-lg font-bold mb-2">Quick Links</h2>
-            <ul className="space-y-1 text-base">
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> About Us</li>
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Contact Us</li>
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Our Services</li>
-              <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Our Projects</li>
-              {/* <li className="flex items-center gap-2 hover:text-[#a3856a] cursor-pointer transition-colors"><FaArrowRight className="text-xs" /> Support</li> */}
-            </ul>
-          </div>
+  <h2 className="text-lg font-bold mb-2">Quick Links</h2>
+  <ul className="space-y-1 text-base">
+    <li>
+      <Link to="/about" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+        <FaArrowRight className="text-xs" /> About Us
+      </Link>
+    </li>
+    <li>
+      <Link to="/contact" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+        <FaArrowRight className="text-xs" /> Contact Us
+      </Link>
+    </li>
+    <li>
+      <Link to="/services" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+        <FaArrowRight className="text-xs" /> Our Services
+      </Link>
+    </li>
+    <li>
+      <Link to="/projects" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+        <FaArrowRight className="text-xs" /> Our Projects
+      </Link>
+    </li>
+    {/* <li>
+      <Link to="/support" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+        <FaArrowRight className="text-xs" /> Support
+      </Link>
+    </li> */}
+  </ul>
+</div>
+
 
           {/* Project Gallery */}
           <div className="flex-1 min-w-[220px]">

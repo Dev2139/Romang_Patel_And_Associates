@@ -6,9 +6,9 @@ import Slide3 from '../../assets/gallery-5.jpg';
 
 // Placeholder images (replace with your actual image URLs)
 const carouselImages = [
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1752655780/dbczh699qhh2mh0k3agg.png',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656051/to1hdnmg8eivnlkitnlt.jpg',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1752656240/wnr6dnde0vusgo0cdfoc.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468479/zdkzebhi7zkxyzuxobtw.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468807/gb4emnsxohbagabxnrvq.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468902/spgka1oxvyoso4igyy0b.png',
 ];
 
 // Thumbnails for the dots
