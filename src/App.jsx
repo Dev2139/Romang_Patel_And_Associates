@@ -7,6 +7,7 @@ import Projects from './components/Projects/Projects';
 import Contacts from './components/Contacts/Contacts';
 import Quote from './components/Quote/Contacts'
 import ScrollToTop from './components/ScrollToTop';
+import Careers from './components/Careers/Careers';
 import ProjectGallery from './components/Projects/ProjectGallery';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectGallery />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/quote" element={<Quote />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </BrowserRouter>
   );

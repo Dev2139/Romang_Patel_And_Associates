@@ -60,6 +60,9 @@ const Navbar = () => {
           <Link to="/projects" className="block lg:inline-block text-black hover:text-gray-600 py-2 lg:py-0 font-medium">
             Projects
           </Link>
+          <Link to="/careers" className="block lg:inline-block text-black hover:text-gray-600 py-2 lg:py-0 font-medium">
+            Careers
+          </Link>
           <Link to="/contact" className="block lg:inline-block text-black hover:text-gray-600 py-2 lg:py-0 font-medium">
             Contact
           </Link>
