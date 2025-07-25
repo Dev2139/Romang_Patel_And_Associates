@@ -9,38 +9,38 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 const services = [
   {
     title: "Residential",
-    description: "Transform your home with our premium solar solutions. We specialize in custom residential installations that maximize energy efficiency while maintaining aesthetic appeal. Our expert team ensures seamless integration with your home's architecture.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "We design and deliver custom residential environments that seamlessly integrate sustainable energy systems with refined architectural aesthetics. Our approach ensures each home is a sanctuary of comfort, efficiency, and timeless design, tailored to the unique vision of every client.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753465492/hkmtbxhz0mrvyhtpnhrg.png",
     icon: HomeIcon
   },
   {
     title: "Commercial",
-    description: "Power your business with sustainable energy solutions. Our commercial solar installations are designed to reduce operational costs and carbon footprint. We handle everything from initial assessment to complete installation with minimal business disruption.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "Our commercial projects exemplify the synergy of innovative design and operational excellence. We create inspiring, energy-efficient spaces that elevate brand identity, enhance user experience, and deliver measurable value for businesses of all scales.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753465568/srow1grkkqqy4j8vcvzr.png",
     icon: BusinessIcon
   },
   {
     title: "Institutional",
-    description: "Empower educational and government institutions with renewable energy. Our institutional solar projects combine sustainability with long-term cost savings. We provide comprehensive solutions tailored to institutional requirements and regulations.",
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "We partner with educational and civic institutions to create enduring, sustainable spaces that foster learning, collaboration, and community engagement. Our solutions are tailored to institutional needs, regulatory standards, and the highest benchmarks of architectural integrity.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753465827/gvtuprbugkt8yixdd2vu.png",
     icon: SchoolIcon
   },
   {
     title: "Interior",
-    description: "Enhance your indoor spaces with innovative solar-powered lighting and climate control solutions. Our interior solar integration services bring natural light and energy efficiency to your indoor environments while maintaining design aesthetics.",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "Our interior architecture services transform spaces with a focus on natural light, spatial harmony, and energy efficiency. We integrate advanced solar-powered lighting and climate solutions, ensuring every interior is both beautiful and sustainable.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753467011/q112ebx4h2p5i6cmbues.png",
     icon: LightbulbIcon
   },
   {
     title: "Hotels",
-    description: "Elevate your hospitality business with sustainable energy solutions. Our hotel solar installations reduce energy costs while enhancing your green credentials. We provide 24/7 monitoring and maintenance to ensure uninterrupted service.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "We collaborate with hospitality leaders to design hotels that embody luxury, comfort, and environmental responsibility. Our architectural solutions integrate renewable energy and smart systems, enhancing guest experience while optimizing operational efficiency.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753467089/g1ydsw8lh35yri2o3udv.png",
     icon: HotelIcon
   },
   {
     title: "Resorts",
-    description: "Create an eco-friendly paradise with our resort solar solutions. We design and implement comprehensive solar systems for resorts, including pool heating, lighting, and power generation. Our solutions are built to withstand coastal and tropical conditions.",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    description: "Our resort projects are conceived as immersive, eco-friendly destinations. We design and implement comprehensive architectural and energy solutions that harmonize with natural surroundings, delivering unforgettable guest experiences and sustainable operations.",
+    image: "https://res.cloudinary.com/dsddldquo/image/upload/v1753467168/bbrfixlkf5nautc5zqzr.png",
     icon: BeachAccessIcon
   },
 ];
@@ -149,8 +149,8 @@ const Section4 = () => {
     <div className="py-12 mt-5" style={{ background: 'linear-gradient(to right, #D6BFA7, #EFE2D9)' }}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h6 className="text-[#f5a623] text-sm font-semibold uppercase">Our Services</h6>
-          <h1 className="text-4xl font-bold mt-2">Expertise Across Every Architectural Typology</h1>
+          <h6 className="text-[#f5a623] text-sm font-semibold uppercase">Our Expertise</h6>
+          <h1 className="text-4xl font-bold mt-2">Architectural Solutions for Every Environment</h1>
         </div>
         <div className="relative overflow-hidden">
           <div

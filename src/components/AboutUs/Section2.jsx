@@ -1,5 +1,5 @@
 import { FaUsers, FaCheck, FaAward, FaUserCog } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const CustomerSection = () => {
   const finalValues = {
@@ -15,8 +15,30 @@ const CustomerSection = () => {
     awards: 0,
     workers: 0,
   });
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
     const duration = 2000; // 2 seconds
     const interval = 20; // Update every 20ms
     const steps = duration / interval;
@@ -37,37 +59,37 @@ const CustomerSection = () => {
       }
     }, interval);
     return () => clearInterval(counterInterval);
-  }, []);
+  }, [hasAnimated]);
 
   const stats = [
     {
       icon: <FaUsers className="text-[#000000] text-3xl" />,
       key: 'customers',
-      title: 'Happy Customers',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Distinguished Clients',
+      description: 'We are privileged to serve a discerning clientele who entrust us to transform their visions into enduring architectural landmarks, fostering relationships built on trust, collaboration, and shared ambition.',
     },
     {
       icon: <FaCheck className="text-[#000000] text-3xl" />,
       key: 'projects',
-      title: 'Project Done',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Signature Projects',
+      description: 'Our diverse portfolio spans bespoke residences, innovative commercial spaces, and iconic public works—each project a testament to our commitment to design excellence and contextual sensitivity.',
     },
     {
       icon: <FaAward className="text-[#000000] text-3xl" />,
       key: 'awards',
-      title: 'Awards Win',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Industry Accolades',
+      description: 'Recognized by peers and institutions alike, our work has garnered prestigious awards for innovation, sustainability, and architectural distinction on both national and international stages.',
     },
     {
       icon: <FaUserCog className="text-[#000000] text-3xl" />,
       key: 'workers',
-      title: 'Expert Workers',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Expert Team',
+      description: 'Our multidisciplinary team of architects, designers, and specialists brings together technical mastery and creative vision to deliver transformative spaces that inspire and endure.',
     },
   ];
 
   return (
-    <div className="w-full py-10 bg-[#EFE2D9]">
+    <div ref={sectionRef} className="w-full py-10 bg-[#EFE2D9]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

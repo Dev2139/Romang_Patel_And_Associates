@@ -3,8 +3,8 @@ import { FaCheck, FaUsers, FaRulerCombined, FaHeadphones } from 'react-icons/fa'
 
 const FeatureItem = ({ icon, title, subtitle }) => (
   <div className="flex items-center">
-    <div className="w-12 h-12 bg-[#f4e4d3] rounded-full flex items-center justify-center mr-4 shadow-sm overflow-hidden">
-      <span className="text-xl text-black flex items-center justify-center w-full h-full">{icon}</span>
+    <div className="w-16 aspect-square bg-[#f4e4d3] rounded-full flex items-center justify-center mr-4 shadow-sm overflow-hidden p-3">
+      <span className="text-2xl text-black flex items-center justify-center w-full h-full">{icon}</span>
     </div>
     <div>
       <p className="mb-0 text-sm text-gray-600">{title}</p>
@@ -23,37 +23,31 @@ const WhyChooseUs = () => (
               Why Choose Us
             </h6>
             <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Comprehensive Design Solutions for Homes & Businesses
+              Visionary Architecture for Inspired Living & Working Spaces
             </h1>
             <p className="text-black font-normal mb-6">
-              With a legacy spanning more than three decades, our architectural
-              firm has stood as a beacon of innovation, precision, and timeless
-              design. Since our inception, we have dedicated ourselves to shaping
-              environments that are not just built forms, but immersive
-              experiences. Our journey has been one of continual evolution,
-              exploring the intersections of function, aesthetics,
-              sustainability, and the human spirit.
+              With over 30 years of experience, our architectural firm creates inspiring spaces that blend innovation, technical excellence, and sustainability. We collaborate closely with clients to deliver bespoke solutions that elevate everyday living and working environments.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <FeatureItem
                 icon={<FaCheck />}
-                title="Unmatched Quality"
-                subtitle="We use only premium material for lasting performance."
-              />
-              <FeatureItem
-                icon={<FaUsers />}
-                title="Unmatched Quality"
-                subtitle="We use only premium material for lasting performance."
+                title="Bespoke Solutions"
+                subtitle="Tailored architectural designs that reflect your unique vision."
               />
               <FeatureItem
                 icon={<FaRulerCombined />}
-                title="Unmatched Quality"
-                subtitle="We use only premium material for lasting performance."
+                title="Technical Excellence"
+                subtitle="Precision and innovation in every detail, from concept to completion."
+              />
+              <FeatureItem
+                icon={<FaUsers />}
+                title="Collaborative Partnership"
+                subtitle="A client-focused approach, ensuring your needs guide our process."
               />
               <FeatureItem
                 icon={<FaHeadphones />}
-                title="Unmatched Quality"
-                subtitle="We use only premium material for lasting performance."
+                title="Sustainable Design"
+                subtitle="Environmentally responsible solutions for a better future."
               />
             </div>
           </div>

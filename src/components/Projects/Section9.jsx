@@ -1,46 +1,24 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React from 'react';
+import { useForm } from '@formspree/react';
 import gallery3 from '../../assets/gallery-3.jpg';
 
 const QuoteForm = () => {
-  const form = useRef();
-  const [status, setStatus] = useState('');
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setStatus('');
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        form.current,
-        'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        (result) => {
-          setStatus('Message sent successfully!');
-          form.current.reset();
-        },
-        (error) => {
-          setStatus('Failed to send message. Please try again.');
-        }
-      );
-  };
+  const [formspreeState, formspreeHandleSubmit] = useForm("mrblbzzw");
 
   return (
     <div className="min-h-[400px] flex bg-gradient-to-r from-[#f3e6dd] to-[#e2ccb3] mt-4">
       {/* Left: Image */}
       <div className="hidden md:block w-1/2 h-auto relative">
-        <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1740489194/qbwr3opoj8n65lrshqzj.avif" alt="Quote" className="w-full h-full object-cover" />
+        <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659885/uvex88bp84cqto10betd.png" alt="Quote" className="w-full h-full object-cover" />
       </div>
       {/* Right: Form */}
       <div className="w-full md:w-1/2 flex items-center justify-end">
         <div className="w-full max-w-2xl p-8">
           <div className="mb-2">
-            <h6 className="font-bold text-lg mb-1">Request A Quote</h6>
+            <h6 className="font-bold text-[#f5a623] text-lg mb-1">Request A Quote</h6>
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">Get Your Free Quote Today</h1>
           </div>
-          <form ref={form} onSubmit={sendEmail}>
+          <form onSubmit={formspreeHandleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input
                 type="text"
@@ -78,14 +56,18 @@ const QuoteForm = () => {
                 <button
                   type="submit"
                   className="border border-black text-black font-semibold rounded-full py-2 px-6 hover:bg-black hover:text-white transition-colors"
+                  disabled={formspreeState.submitting}
                 >
                   Submit Response
                 </button>
               </div>
             </div>
           </form>
-          {status && (
-            <div className="mt-4 text-center font-semibold text-green-700">{status}</div>
+          {formspreeState.succeeded && (
+            <div className="mt-4 text-center font-semibold text-green-700">Message sent successfully!</div>
+          )}
+          {formspreeState.errors && formspreeState.errors.length > 0 && (
+            <div className="mt-4 text-center font-semibold text-red-700">Failed to send message. Please try again.</div>
           )}
         </div>
       </div>

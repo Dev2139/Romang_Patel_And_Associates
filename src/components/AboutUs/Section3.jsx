@@ -17,31 +17,37 @@ const Section3 = () => {
         <div className="w-full md:w-1/2 flex flex-col justify-center bg-gradient-to-r from-[#EFE2D9] to-[#D6BFA7] py-8 px-4 sm:px-8 md:py-16 md:px-16">
           <h6 className="text-[#f5a623] text-base font-bold mb-2">About Us</h6>
           <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-black">
-            Design Spaces for Over 30 Years – Where Vision Meets Precision
+            Shaping Iconic Spaces for Over 30 Years – Where Vision Inspires Excellence
           </h1>
           <p className="text-black mb-6 text-base">
-            With a legacy spanning more than three decades, our architectural firm has stood as a beacon of innovation, precision, and timeless design. Since our inception, we have dedicated ourselves to shaping environments that are not just built forms, but immersive experiences. Our journey has been one of continual evolution, exploring the intersections of function, aesthetics, sustainability, and the human spirit.
+            For more than three decades, our architectural practice has been synonymous with visionary design, technical mastery, and enduring quality. We are dedicated to transforming aspirations into architectural landmarks—spaces that harmonize form, function, and the unique spirit of every client. Our legacy is built on a foundation of innovation, sustainability, and a relentless pursuit of excellence, ensuring every project is both timeless and transformative.
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex items-center text-black text-lg">
               <span className="bg-white rounded-full shadow mr-3 p-2 flex items-center justify-center text-2xl border border-gray-200">
                 <FaCheckCircle className="text-black" />
               </span>
-              We design homes, offices, institutes, and hotels.
+              Comprehensive expertise in residential, commercial, institutional, and hospitality architecture.
             </div>
             <div className="flex items-center text-black text-lg">
               <span className="bg-white rounded-full shadow mr-3 p-2 flex items-center justify-center text-2xl border border-gray-200">
                 <FaCheckCircle className="text-black" />
               </span>
-              Every space is crafted with creativity and purpose.
+              Bespoke solutions that blend creativity, functionality, and sustainability.
             </div>
             <div className="flex items-center text-black text-lg">
               <span className="bg-white rounded-full shadow mr-3 p-2 flex items-center justify-center text-2xl border border-gray-200">
                 <FaCheckCircle className="text-black" />
               </span>
-              Our work reflects versatility and thoughtful design.
+              A client-centric approach, delivering spaces that inspire and endure.
             </div>
           </div>
+          <Link
+            to="/about"
+            className="bg-[#E8D9CC] border border-black text-black rounded-full ml-[-2px] py-4 px-12 mt-2 inline-block text-center text-lg font-bold hover:bg-[#f5ece6] transition-colors shadow-sm w-full sm:w-auto mx-auto"
+          >
+            Discover More
+          </Link>
         </div>
       </div>
     </div>

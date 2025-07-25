@@ -17,7 +17,7 @@ const images = [
   {
     src: "https://res.cloudinary.com/dsddldquo/image/upload/v1753286449/x6fb0oarpet1ic6tixme.jpg",
     title: 'Office Design',
-    info: 'Info about Project Three, Location C',
+    // info: 'Info about Project Three, Location C',
   },
   {
     src: "https://res.cloudinary.com/dsddldquo/image/upload/v1753287215/vrlwsozqfgjw8b0hf5tq.jpg",

@@ -24,16 +24,16 @@ const ReviewCard = ({ name, location, review }) => (
 const Section8 = () => {
   const reviews = [
     {
-      name: 'Dev Patel',
-      location: 'Modasa, Gujarat',
+      name: 'Aarav Mehta',
+      location: 'Ahmedabad, Gujarat',
       review:
-        'With a legacy spanning more than three decades, our architectural firm has stood as a beacon of innovation, precision, and timeless design. Since our inception, we have dedicated ourselves to shaping environments that are not just built forms, but immersive experiences. Our journey has been one of continual evolution, exploring the intersections of function, aesthetics, sustainability, and the human spirit.',
+        'Our firm blends visionary design with enduring quality, creating spaces that inspire and uplift communities. With every project, we strive to balance innovation, sustainability, and functionality, ensuring that each environment is both beautiful and purposeful. Our commitment to excellence is reflected in the trust our clients place in us and the lasting impact of our work. We believe in close collaboration, transparent communication, and delivering results that exceed expectations.',
     },
     {
-      name: 'Dev Patel',
-      location: 'Modasa, Gujarat',
+      name: 'Priya Shah',
+      location: 'Surat, Gujarat',
       review:
-        'With a legacy spanning more than three decades, our architectural firm has stood as a beacon of innovation, precision, and timeless design. Since our inception, we have dedicated ourselves to shaping environments that are not just built forms, but immersive experiences. Our journey has been one of continual evolution, exploring the intersections of function, aesthetics, sustainability, and the human spirit.',
+        'We approach each project as a unique opportunity to deliver timeless, functional, and beautiful spaces. Our team collaborates closely with clients to transform their ideas into environments that exceed expectations. Through creativity, expertise, and attention to detail, we create architectural solutions that leave a lasting impression and stand the test of time. Every detail is thoughtfully considered to ensure a seamless and rewarding experience.',
     },
     
     // Add more reviews for a better scrolling effect

@@ -96,15 +96,15 @@ const Footer = () => {
           <div className="flex-1 min-w-[220px]">
             <h2 className="text-lg font-bold mb-2">Project Gallery</h2>
             <div className="grid grid-cols-3 gap-2 mt-2">
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659885/uvex88bp84cqto10betd.png" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659879/s8wtncqcyjq5hrd0crrx.png" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753267252/nn6b0qehbbchqbbzokwg.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753271247/mnb7cujfhhbcrrwegeye.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
               <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659861/ifcsgqkn9qkqb3yxzsay.png" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659856/ulxgy9p49hhkmqxb1vnb.png" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752660034/h2yfvtcbke4ktqfusikm.png" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659861/ifcsgqkn9qkqb3yxzsay.png" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659856/ulxgy9p49hhkmqxb1vnb.png" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752660034/h2yfvtcbke4ktqfusikm.png" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753287215/vrlwsozqfgjw8b0hf5tq.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753288022/ytomruchpzspwgcb5yon.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753292055/zmxzxiqlndcuboqe9rwj.jpg" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753346703/dfg08cths86hlzdmslgz.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348279/rvvs3xelihnafl9612ug.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
+              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348619/oxzywomebcyg5pu3pleh.jpg" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
             </div>
           </div>
 

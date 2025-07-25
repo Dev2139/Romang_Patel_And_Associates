@@ -3,6 +3,7 @@ import gallery3 from '../../assets/gallery-3.jpg';
 import gallery4 from '../../assets/gallery-4.jpg';
 import gallery5 from '../../assets/gallery-5.jpg';
 import { MdArrowBack, MdArrowForward } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   {
@@ -53,6 +54,7 @@ const Projects = () => {
   const [centerIndex, setCenterIndex] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [animDirection, setAnimDirection] = useState(null); // 'left' or 'right' for animation
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isPaused) return;
@@ -97,10 +99,10 @@ const Projects = () => {
         <h1 className="text-4xl lg:text-4xl font-bold text-gray-800 mb-4">Visit Our Latest Projects</h1>
       </div>
       <div className="relative flex flex-row items-center justify-center w-full max-w-7xl">
-        {/* Left Arrow */}
+        {/* Left Arrow - only show on sm and up */}
         <button
           onClick={() => handleManualScroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E4CBBA] bg-opacity-60 text-black text-2xl sm:text-3xl hover:bg-opacity-80 focus:ring-2 focus:ring-white transition disabled:opacity-30"
+          className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E4CBBA] bg-opacity-60 text-black text-2xl sm:text-3xl hover:bg-opacity-80 focus:ring-2 focus:ring-white transition disabled:opacity-30"
           disabled={images.length < 2}
           aria-label="Previous project"
           tabIndex={0}
@@ -109,9 +111,9 @@ const Projects = () => {
         </button>
         {/* Cards */}
         <div className="flex flex-row items-center justify-center gap-2 sm:gap-8 w-full transition-all duration-500">
-          {/* Left Card (only show if more than 1 project) */}
+          {/* Left Card (only show if more than 1 project, and only on sm and up) */}
           {showLeft && (
-            <div className={`w-32 sm:w-72 h-40 sm:h-80 bg-black rounded-2xl shadow-xl flex-shrink-0 overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
+            <div className={`hidden sm:block w-32 sm:w-72 h-40 sm:h-80 bg-black rounded-2xl shadow-xl flex-shrink-0 overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
               style={{ opacity: 0.7 }}
             >
               <img src={getCard(-1).src} alt={getCard(-1).title} className="w-full h-full object-cover" />
@@ -119,7 +121,7 @@ const Projects = () => {
           )}
 
           <div
-            className={`relative w-40 sm:w-[32rem] h-56 sm:h-[26rem] bg-black rounded-2xl shadow-2xl flex-shrink-0 flex items-end overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
+            className={`relative w-72 h-80 sm:w-[32rem] sm:h-[26rem] bg-black rounded-2xl shadow-2xl flex-shrink-0 flex items-end overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
             aria-live="polite"
           >
             <img src={getCard(0).src} alt={getCard(0).title} className="w-full h-full object-cover absolute top-0 left-0 opacity-90" />
@@ -128,22 +130,27 @@ const Projects = () => {
             <div className="absolute bottom-8 left-6 right-6 z-20">
               <h2 className="text-white text-2xl sm:text-4xl font-bold mb-2 sm:mb-3">{getCard(0).title}</h2>
               <p className="text-white text-sm sm:text-lg font-semibold mb-2">{getCard(0).info}</p>
-              {/* <button className="mt-2 px-4 py-2 bg-white bg-opacity-90 text-black font-semibold rounded-lg shadow hover:bg-opacity-100 transition text-sm sm:text-base">View more</button> */}
+              {/* Hide View Details button on mobile */}
+              <button 
+                className="hidden sm:inline-block mt-2 px-4 py-2 bg-white bg-opacity-90 text-black font-semibold rounded-lg shadow hover:bg-opacity-100 transition text-sm sm:text-base"
+                onClick={() => navigate('/projects')}
+              >View Details</button>
             </div>
           </div>
          
+          {/* Right Card (only show if more than 2 projects, and only on sm and up) */}
           {showRight && (
-            <div className={`w-32 sm:w-72 h-40 sm:h-80 bg-black rounded-2xl shadow-xl flex-shrink-0 overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
+            <div className={`hidden sm:block w-32 sm:w-72 h-40 sm:h-80 bg-black rounded-2xl shadow-xl flex-shrink-0 overflow-hidden transition-all duration-300 ${animDirection === 'left' ? 'animate-slideRight' : animDirection === 'right' ? 'animate-slideLeft' : ''}`}
               style={{ opacity: 0.7 }}
             >
               <img src={getCard(1).src} alt={getCard(1).title} className="w-full h-full object-cover" />
             </div>
           )}
         </div>
-        {/* Right Arrow */}
+        {/* Right Arrow - only show on sm and up */}
         <button
           onClick={() => handleManualScroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E4CBBA] bg-opacity-60 text-black text-2xl sm:text-3xl hover:bg-opacity-80 focus:ring-2 focus:ring-white transition disabled:opacity-30"
+          className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E4CBBA] bg-opacity-60 text-black text-2xl sm:text-3xl hover:bg-opacity-80 focus:ring-2 focus:ring-white transition disabled:opacity-30"
           disabled={images.length < 2}
           aria-label="Next project"
           tabIndex={0}

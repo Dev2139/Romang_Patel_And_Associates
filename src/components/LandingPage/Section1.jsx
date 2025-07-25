@@ -20,16 +20,16 @@ const thumbnailImages = [
 
 const carouselContent = [
   {
-    heading: 'Designing Building and Spaces for 30+ Years',
-    description: "beacon of innovation, precision, and timeless design. Since our inception, we have dedicated ourselves to shaping environments that are not just built forms, but immersive experiences. Our journey has been one of continual evolution, exploring the intersections of function, aesthetics, sustainability, and the human spirit.",
+    heading: 'Crafting Enduring Architectural Legacies',
+    description: "For over three decades, our practice has stood at the forefront of architectural innovation, seamlessly blending artistry with technical mastery. We are dedicated to creating spaces that transcend mere function—each project is a testament to our commitment to timeless design, environmental stewardship, and the enrichment of the human experience.",
   },
   {
-    heading: 'Expertise Across All Typologies',
-    description: "Our strength lies in the diversity of our portfolio. Over the years, we have carved our niche across a wide spectrum of architectural domains. From opulent private residences to dynamic commercial complexes, from inspiring institutional buildings to thoughtfully designed hotels, housing societies, and resorts—our work echoes versatility, depth, and contextual understanding.",
+    heading: 'Versatility Across the Built Environment',
+    description: "Our portfolio reflects a profound versatility, encompassing bespoke residences, transformative commercial spaces, landmark institutions, and luxurious hospitality destinations. Every commission is approached with a deep respect for context, culture, and the aspirations of those who inhabit our work, resulting in architecture that is both distinctive and enduring.",
   },
   {
-    heading: 'Shaping Tomorrow, Today',
-    description: "Our work is more than design—it's about envisioning the future. Every project is a collaboration of creativity, precision, and responsibility. We believe great spaces don't just serve a purpose—they inspire, connect, and endure. From concept to completion, we shape environments that elevate everyday life",
+    heading: 'Visionary Design, Collaborative Spirit',
+    description: "We believe architecture is a collaborative journey—an ongoing dialogue between client, context, and creative vision. From concept to completion, we partner with our clients to shape environments that inspire, connect, and stand the test of time. Together, we are shaping the future of the built world, one visionary project at a time.",
   },
 ];
 

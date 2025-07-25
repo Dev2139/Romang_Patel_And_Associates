@@ -65,26 +65,26 @@ const CustomerSection = () => {
     {
       icon: <FaUsers className="text-[#000000] text-3xl" />,
       key: 'customers',
-      title: 'Happy Customers',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Distinguished Clients',
+      description: 'We are privileged to serve a discerning clientele who entrust us to transform their visions into enduring architectural landmarks, fostering relationships built on trust, collaboration, and shared ambition.',
     },
     {
       icon: <FaCheck className="text-[#000000] text-3xl" />,
       key: 'projects',
-      title: 'Project Done',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Signature Projects',
+      description: 'Our diverse portfolio spans bespoke residences, innovative commercial spaces, and iconic public works—each project a testament to our commitment to design excellence and contextual sensitivity.',
     },
     {
       icon: <FaAward className="text-[#000000] text-3xl" />,
       key: 'awards',
-      title: 'Awards Win',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Industry Accolades',
+      description: 'Recognized by peers and institutions alike, our work has garnered prestigious awards for innovation, sustainability, and architectural distinction on both national and international stages.',
     },
     {
       icon: <FaUserCog className="text-[#000000] text-3xl" />,
       key: 'workers',
-      title: 'Expert Workers',
-      description: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit',
+      title: 'Expert Team',
+      description: 'Our multidisciplinary team of architects, designers, and specialists brings together technical mastery and creative vision to deliver transformative spaces that inspire and endure.',
     },
   ];
 
