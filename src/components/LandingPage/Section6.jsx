@@ -133,7 +133,7 @@ const Projects = () => {
               <button 
                 className="mt-2 px-3 py-2 md:px-4 md:py-2 bg-white bg-opacity-90 text-black font-semibold rounded-lg shadow hover:bg-opacity-100 transition text-sm md:text-base"
                 onClick={() => navigate('/projects')}
-              >View Details</button>
+              >View More</button>
             </div>
           </div>
          
