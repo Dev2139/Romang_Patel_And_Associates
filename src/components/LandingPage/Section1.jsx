@@ -50,7 +50,7 @@ const HeaderCarousel = () => {
   useEffect(() => {
     const duration = 2000; // 2 seconds
     const steps = 60; // 60 steps for smooth animation
-    const increment = 3 / steps; // Final number is 3
+    // const increment = 3 / steps; // Final number is 3
     const stepDuration = duration / steps;
 
     let currentStep = 0;
@@ -74,14 +74,14 @@ const HeaderCarousel = () => {
   return (
     <div className="relative w-full p-0 pb-20 md:pb-20 sm:pb-10">
       {/* Counter Display */}
-      <div className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+      {/* <div className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
         <span className="text-white text-2xl md:text-2xl sm:text-lg font-bold">
           {counter.toFixed(1)}
         </span>
-      </div>
+      </div> */}
 
       {/* Carousel Slides */}
-      <div className="relative w-full h-[400px] sm:h-[250px] md:h-[500px] lg:h-[750px]">
+      <div className="relative w-full h-[300px] sm:h-[250px] md:h-[500px] lg:h-[750px]">
         {carouselImages.map((image, index) => (
           <div
             key={index}
@@ -97,12 +97,12 @@ const HeaderCarousel = () => {
             />
             <div className="absolute inset-0 flex items-center">
               <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-12">
-                <div className="flex justify-start">
-                  <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12">
+                <div className="flex justify-center sm:justify-start">
+                  <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 text-center sm:text-left">
                     <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-8xl font-extrabold text-black leading-tight animate-slideInDown drop-shadow-2xl">
                       {carouselContent[index].heading}
                     </h1>
-                    <p className="text-xs sm:text-sm md:text-lg font-medium text-black mt-4 md:mt-6 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl animate-slideInDown drop-shadow-2xl">
+                    <p className="text-xs sm:text-sm md:text-lg font-medium text-black mt-4 md:mt-6 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto sm:mx-0 animate-slideInDown drop-shadow-2xl">
                       {carouselContent[index].description}
                     </p>
                     
@@ -114,26 +114,26 @@ const HeaderCarousel = () => {
         ))}
       </div>
 
-      {/* Custom Dots (Thumbnails) */}
-        {/* <div className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
-          {thumbnailImages.map((thumbnail, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
-                currentSlide === index 
-                  ? 'border-white scale-110 ring-4 ring-white/50' 
-                  : 'border-gray-300 opacity-70 hover:opacity-100'
-              }`}
-            >
-              <img
-                src={thumbnail}
-                alt={`Thumbnail ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </button>
-          ))}
-        </div> */}
+      {/* Custom Dots (Thumbnails) - Hidden on mobile */}
+      <div className="hidden md:block absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
+        {thumbnailImages.map((thumbnail, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 transition-all duration-300 ${
+              currentSlide === index 
+                ? 'border-white scale-110 ring-4 ring-white/50' 
+                : 'border-gray-300 opacity-70 hover:opacity-100'
+            }`}
+          >
+            <img
+              src={thumbnail}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </button>
+        ))}
+      </div>
 
       {/* Inline styles for animations (minimal CSS since Tailwind doesn't support keyframes) */}
       <style>
