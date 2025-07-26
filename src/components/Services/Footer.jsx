@@ -48,8 +48,18 @@ const Footer = () => {
       </Link>
             <h2 className="text-lg font-bold mb-2">Address</h2>
             <ul className="space-y-2 text-base">
-              <li className="flex items-center gap-2"><FaMapMarkerAlt /> Vadodra Office Address</li>
-              <li className="flex items-center gap-2"><FaMapMarkerAlt /> Vadodra Office Address</li>
+              <li 
+                className="flex items-center gap-2 cursor-pointer hover:text-[#a3856a] transition-colors"
+                onClick={() => window.open('https://maps.app.goo.gl/CKKfwbYR6vsJKzC37', '_blank')}
+              >
+                <FaMapMarkerAlt /> Vadodra Office Address
+              </li>
+              <li 
+                className="flex items-center gap-2 cursor-pointer hover:text-[#a3856a] transition-colors"
+                onClick={() => window.open('https://maps.app.goo.gl/FCnxfbph5erpoN9A8', '_blank')}
+              >
+                <FaMapMarkerAlt /> Limdi Office Address
+              </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt />
                 <a

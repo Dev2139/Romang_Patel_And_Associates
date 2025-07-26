@@ -3,7 +3,7 @@ import { useForm } from '@formspree/react';
 import gallery3 from '../../assets/gallery-3.jpg';
 
 const QuoteForm = () => {
-  const [formspreeState, formspreeHandleSubmit] = useForm("mrblbzzw");
+  const [formspreeState, formspreeHandleSubmit] = useForm("xwpqoydv");
 
   return (
     <div className="min-h-[400px] flex bg-gradient-to-r from-[#f3e6dd] to-[#e2ccb3] mt-4">
@@ -42,9 +42,11 @@ const QuoteForm = () => {
               />
               <select name="user_service" className="w-full border-0 h-10 sm:h-12 px-3 bg-[#dedede] placeholder-black/60 rounded" required>
                 <option value="">Select a Service</option>
-                <option value="1">Service 1</option>
-                <option value="2">Service 2</option>
-                <option value="3">Service 3</option>
+                <option value="1">Housing</option>
+                <option value="2">Interior Designing</option>
+                <option value="3">Legal Consultation</option>
+                <option value="4">Commercial Project</option>
+
               </select>
               <textarea
                 name="message"

@@ -21,7 +21,7 @@ const About = () => {
             </li>
             <span className="mx-2">/</span>
             <li className="breadcrumb-item text-white" aria-current="page">
-              Contacts
+              Careers
             </li>
           </ol>
         </nav>

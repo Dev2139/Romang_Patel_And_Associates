@@ -25,7 +25,7 @@ const Section2 = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('https://formspree.io/f/xzzvzprv', {
+      const response = await fetch('https://formspree.io/f/mzzvrolw', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -52,7 +52,7 @@ const Section2 = () => {
           {/* Contact Form */}
           <div className="lg:w-1/2 flex items-center py-12 animate-fadeIn" style={{ animationDelay: '0.5s' }}>
             <div className="lg:p-12 lg:pl-0 w-full">
-              <h6 className="text-black  font-bold uppercase mb-2">Contact Us</h6>
+              <h6 className="text-black  font-bold uppercase mb-2">Get a Quote a for your dream space today</h6>
               <h1 className="text-3xl font-bold mb-4">Feel Free To Contact Us</h1>
               <p className="mb-4 text-gray-600">
               We’re here to help! Whether you have questions, feedback, or need support, feel free to reach out to us. You can contact us via email, phone, or by filling out the form below. Our team will get back to you as soon as possible. We look forward to hearing from you! {' '}
@@ -93,7 +93,7 @@ const Section2 = () => {
           {/* Google Map */}
           <div className="lg:w-1/2 min-h-[400px] pe-0 relative">
             <div className="absolute inset-0 w-full h-full">
-            <iframe className="w-full h-full object-cover rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5208573304653!2d72.68280057516631!3d23.078021479135046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e81d4a3c2588b%3A0x202882c784f2f2f2!2sShri%20Hari%20Gift%20City!5e0!3m2!1sen!2sin!4v1752652831718!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe className="w-full h-full object-cover rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29533.196628694594!2d73.22329007503596!3d22.291260202968644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc59bf982fc73%3A0xc5074c635ee2ee1e!2sSiddheshwar%20HighIand!5e0!3m2!1sen!2sin!4v1753556319311!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>

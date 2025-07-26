@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const FORM_ENDPOINT = "https://formspree.io/f/mqalqpgl"; // Replace with your actual Formspree endpoint
+const FORM_ENDPOINT = "https://formspree.io/f/mqalqnvg"; // Replace with your actual Formspree endpoint
 
 const CareerForm = () => {
   const [form, setForm] = useState({

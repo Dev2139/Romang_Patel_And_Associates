@@ -115,7 +115,7 @@ const HeaderCarousel = () => {
       </div>
 
       {/* Custom Dots (Thumbnails) - Hidden on mobile */}
-      <div className="hidden md:block absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
+      {/* <div className="hidden md:block absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 sm:gap-3 md:gap-4">
         {thumbnailImages.map((thumbnail, index) => (
           <button
             key={index}
@@ -133,7 +133,7 @@ const HeaderCarousel = () => {
             />
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Inline styles for animations (minimal CSS since Tailwind doesn't support keyframes) */}
       <style>
