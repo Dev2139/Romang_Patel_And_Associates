@@ -1,12 +1,52 @@
-# React + Vite
+# 🏛️ Internship Project for Romang Patel & Associates
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the internship project developed for **Romang Patel & Associates**, a leading architectural and design firm. The project was built to enhance the firm's digital presence and streamline its internal or client-facing processes through modern web technology.
 
-Currently, two official plugins are available:
+## 📌 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The main objective of this project was to develop a professional and functional platform tailored to the needs of an architectural firm. It includes features that showcase the firm’s portfolio, client interaction tools, project galleries, team information, and contact functionality — all within a responsive and visually appealing design.
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React.js
+- **Styling**: Tailwind CSS / MUI / React_Icons
+- **Others**: EmailJS / Cloudinary / Formspree / Google Maps API, etc.
+
+## 🎯 Features
+
+- 📷 **Project Gallery** – A clean showcase of architectural projects with images and descriptions.
+- 👥 **Team Section** – Meet the architects and designers behind the work.
+- 📄 **About Us** – Company vision, philosophy, and areas of expertise.
+- 📞 **Contact Form** – Visitors can send inquiries with automatic email integration.
+- 🗂️ **Service Pages** – Detailed description of architectural and design services.
+- 🧭 **Responsive Design** – Optimized for all devices (mobile, tablet, desktop).
+
+## 📸 Screenshots
+
+![Project Screenshot](https://res.cloudinary.com/dsddldquo/image/upload/v1754154838/l8icd6xc40cq2b5sfsmw.png)
+![Project Screenshot](https://res.cloudinary.com/dsddldquo/image/upload/v1754154836/d7vxgkbxfrgymesnc7ls.png)
+![Project Screenshot](https://res.cloudinary.com/dsddldquo/image/upload/v1754154837/nrrxdeo3pe5d4hsveadd.png)
+![Project Screenshot](https://res.cloudinary.com/dsddldquo/image/upload/v1754154838/kzidls7gyea5ssl0vy5g.png)
+
+
+> _Screenshot of the Romang Patel & Associates website showcasing the modern design and user interface._
+
+## 🌐 Live Demo
+
+**🔗 [View Live Demo](https://romang-patel-and-associates.netlify.app/)**
+
+
+## 
+
+## 🚀 How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/architect-firm-project.git
+cd architect-firm-project
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
