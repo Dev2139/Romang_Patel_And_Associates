@@ -42,8 +42,8 @@ The main objective of this project was to develop a professional and functional 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/architect-firm-project.git
-cd architect-firm-project
+git clone https://github.com/Dev2139/Romang_Patel_And_Associates.git
+cd Romang_Patel_And_Associates
 
 # Install dependencies
 npm install
