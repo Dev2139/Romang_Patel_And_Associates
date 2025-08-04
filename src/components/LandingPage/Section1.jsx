@@ -20,16 +20,16 @@ const thumbnailImages = [
 
 const carouselContent = [
   {
-    heading: 'Crafting Enduring Architectural Legacies',
-    description: "For over three decades, our practice has stood at the forefront of architectural innovation, seamlessly blending artistry with technical mastery. We are dedicated to creating spaces that transcend mere function—each project is a testament to our commitment to timeless design, environmental stewardship, and the enrichment of the human experience.",
+    heading: 'Where Dreams Take Shape Through Design',
+    description: "we are more than just architects — we are interpreters of dreams, translators of emotion, and sculptors of space*. We believe that architecture is not just about creating buildings; it is about designing experiences that bring inner satisfaction, emotional connection, and harmony with the natural world."
   },
   {
-    heading: 'Versatility Across the Built Environment',
-    description: "Our portfolio reflects a profound versatility, encompassing bespoke residences, transformative commercial spaces, landmark institutions, and luxurious hospitality destinations. Every commission is approached with a deep respect for context, culture, and the aspirations of those who inhabit our work, resulting in architecture that is both distinctive and enduring.",
+    heading: 'Conceptual Planning with Purpose',
+    description: "Our approach to planning is conceptual yet practical. Every project is an original concept — a fusion of the client’s vision, the site’s character, and our creative interpretation. We avoid cookie-cutter templates and instead embrace a design journey that reflects both purpose and poetry. Whether it’s a residence, an office, a resort, or a public space — we plan with intention, ensuring that every square foot serves a purpose and tells a story."
   },
   {
-    heading: 'Visionary Design, Collaborative Spirit',
-    description: "We believe architecture is a collaborative journey—an ongoing dialogue between client, context, and creative vision. From concept to completion, we partner with our clients to shape environments that inspire, connect, and stand the test of time. Together, we are shaping the future of the built world, one visionary project at a time.",
+    heading: 'Beyond Aesthetics',
+    description: "We specialize in crafting dream spaces that resonate deeply with the individuals who live, work, and interact within them. Every project begins not with blueprints, but with people — their aspirations, lifestyles, memories, routines, and emotional needs. Our design philosophy is rooted in the understanding that true satisfaction arises when a space reflects the user's inner self. We consider every detail, every texture, every light shadow as part of the emotional experience the space provides."
   },
 ];
 

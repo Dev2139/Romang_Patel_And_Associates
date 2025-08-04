@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FiX } from "react-icons/fi";
+import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const ProjectGallery = () => {
   const { projectId } = useParams();
@@ -12,7 +12,6 @@ const ProjectGallery = () => {
   const [activeImageIdx, setActiveImageIdx] = useState(0);
 
   useEffect(() => {
-    setLoading(true);
     fetch("/projects.json")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load projects");
@@ -21,74 +20,118 @@ const ProjectGallery = () => {
       .then((data) => {
         const found = data.find((p) => String(p.id) === String(projectId));
         setProject(found);
-        setLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, [projectId]);
 
   const openModal = (idx) => {
     setActiveImageIdx(idx);
     setModalOpen(true);
   };
+
   const closeModal = () => setModalOpen(false);
-  const nextImage = () => setActiveImageIdx((idx) => (idx + 1) % project.images.length);
-  const prevImage = () => setActiveImageIdx((idx) => (idx === 0 ? project.images.length - 1 : idx - 1));
+
+  const nextImage = useCallback(() => {
+    setActiveImageIdx((idx) => (idx + 1) % project.images.length);
+  }, [project]);
+
+  const prevImage = useCallback(() => {
+    setActiveImageIdx((idx) => (idx === 0 ? project.images.length - 1 : idx - 1));
+  }, [project]);
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (!modalOpen) return;
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") closeModal();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [modalOpen, nextImage, prevImage]);
 
   const getGridColsClass = () => {
-    if (project.images.length % 3 === 0) {
-      return "md:grid-cols-3";
-    } else if (project.images.length > 6) {
-      return "md:grid-cols-4";
-    } else {
-      return "md:grid-cols-3"; // fallback for 4, 5 images
-    }
+    const count = project.images.length;
+    return count >= 7 ? "md:grid-cols-4" : "md:grid-cols-3";
   };
 
-  if (loading) return <div className="text-center py-10 text-gray-500">Loading project...</div>;
-  if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
-  if (!project) return <div className="text-center py-10 text-gray-500">Project not found.</div>;
+  if (loading) return <div className="text-center py-20 text-gray-500 text-lg">Loading project...</div>;
+  if (error) return <div className="text-center py-20 text-red-500 text-lg">{error}</div>;
+  if (!project) return <div className="text-center py-20 text-gray-500 text-lg">Project not found.</div>;
 
   return (
     <div className="min-h-screen bg-[#f5f0e6]">
-      {/* Main content with blur when modal is open */}
-      <div className={`py-10 px-4 max-w-3xl mx-auto${modalOpen ? ' filter blur-sm' : ''}`}>
-        <button className="mb-4 text-blue-600 hover:underline" onClick={() => navigate(-1)}>&larr; Back</button>
-        <h2 className="text-3xl font-bold mb-2 text-center">{project.title}</h2>
-        {project.category === "Commercial" && project.subcategory && (
-          <div className="text-center text-xs text-gray-500 mb-4">{project.subcategory}</div>
-        )}
-        <div
-          className={`grid gap-4 grid-cols-2 ${project.images.length % 3 === 0 ? "md:grid-cols-3" : project.images.length > 6 ? "md:grid-cols-4" : "md:grid-cols-3"}`}
+      <div className={`relative py-10 px-4 max-w-5xl mx-auto ${modalOpen ? "blur-sm" : ""}`}>
+        <button
+          className="text-sm text-blue-600 border border-blue-600 px-4 py-1 rounded-full hover:bg-blue-600 hover:text-white transition mb-6"
+          onClick={() => navigate(-1)}
         >
+          &larr; Back
+        </button>
+
+        <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-2">{project.title}</h2>
+
+        {project.title2 && (
+          <h3 className="text-xl font-medium text-center text-gray-600 mb-2">{project.title2}</h3>
+        )}
+
+        {project.description && (
+          <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">{project.description}</p>
+        )}
+
+        {project.category === "Commercial" && project.subcategory && (
+          <div className="text-center text-xs text-gray-500 mb-4 uppercase tracking-widest">
+            {project.subcategory}
+          </div>
+        )}
+
+        <div className={`grid gap-4 grid-cols-2 ${getGridColsClass()}`}>
           {project.images.map((img, idx) => (
             <img
               key={idx}
               src={img}
               alt={`${project.title} ${idx + 1}`}
-              className="w-full h-60 object-cover rounded-xl cursor-pointer bg-[#f5f0e6] hover:scale-105 transition-transform"
-              style={{ borderRadius: '1rem' }}
               onClick={() => openModal(idx)}
+              className="w-full h-60 object-cover rounded-xl cursor-pointer bg-[#f5f0e6] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
             />
           ))}
         </div>
       </div>
+
       {/* Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Modal content: Only the image, no background */}
-          <div className="relative">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center px-4">
+          <div className="relative max-w-4xl w-full">
             <button
-              className="absolute top-2 right-2 flex items-center justify-center w-10 h-10 bg-black bg-opacity-50 rounded-full text-white text-3xl hover:bg-opacity-80 transition"
+              className="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-60 text-white rounded-full flex items-center justify-center text-2xl hover:bg-opacity-80 transition"
               onClick={closeModal}
-              aria-label="Close"
             >
               <FiX />
             </button>
-            {/* Your image here */}
-            <img src={project.images[activeImageIdx]} alt="Project" className="max-w-full max-h-[90vh] rounded-lg shadow-lg" />
+
+            <button
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80"
+              onClick={prevImage}
+              aria-label="Previous Image"
+            >
+              <FiChevronLeft size={24} />
+            </button>
+
+            <img
+              src={project.images[activeImageIdx]}
+              alt="Project"
+              className="w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
+            />
+
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-80"
+              onClick={nextImage}
+              aria-label="Next Image"
+            >
+              <FiChevronRight size={24} />
+            </button>
           </div>
         </div>
       )}
@@ -96,4 +139,4 @@ const ProjectGallery = () => {
   );
 };
 
-export default ProjectGallery; 
+export default ProjectGallery;
