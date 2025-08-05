@@ -3,10 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 
 const CustomerSection = () => {
   const finalValues = {
-    customers: 3453,
-    projects: 4234,
+    customers: 400,
+    projects: 500,
     awards: 3123,
-    workers: 2345,
+    workers: 15,
   };
 
   const [counters, setCounters] = useState({
@@ -73,12 +73,6 @@ const CustomerSection = () => {
       key: 'projects',
       title: 'Signature Projects',
       description: 'Our diverse portfolio spans bespoke residences, innovative commercial spaces, and iconic public works—each project a testament to our commitment to design excellence and contextual sensitivity.',
-    },
-    {
-      icon: <FaAward className="text-[#000000] text-3xl" />,
-      key: 'awards',
-      title: 'Industry Accolades',
-      description: 'Recognized by peers and institutions alike, our work has garnered prestigious awards for innovation, sustainability, and architectural distinction on both national and international stages.',
     },
     {
       icon: <FaUserCog className="text-[#000000] text-3xl" />,

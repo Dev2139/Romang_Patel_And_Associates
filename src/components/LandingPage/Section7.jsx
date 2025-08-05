@@ -24,9 +24,9 @@ const teamMembers = [
   {
     name: 'Shailesh M. Patel',
     role: 'Civil Engineer',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773759/fqr3kwezmwchjwfdwpyh.png',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1754400543/jqmayleol3rjzhygjmte.png',
     linkedin: 'https://linkedin.com/in/devpatel1',
-    instagram: 'https://instagram.com/devpatel1',
+    // instagram: 'https://instagram.com/devpatel1',
     bio: [
       'Shailesh M. Patel is a highly experienced civil engineer with over 20 years in the industry.',
       'He has led numerous large-scale infrastructure projects and is known for his attention to detail and commitment to quality.'
@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: 'Romang Patel',
     role: 'Principal Architect',
-    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752773974/jhzxdthwiryco7vmtzgw.png',
+    img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1754400384/xg6w75tf0by9kbhyhs0w.jpg',
     linkedin: 'https://www.linkedin.com/in/romang-patel-1702b7230/',
     instagram: 'https://www.instagram.com/rome.sign',
     bio: [
@@ -48,7 +48,7 @@ const teamMembers = [
     role: 'Structural consultant',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753025495/jx423wn1zspeb9fccvpx.jpg',
     linkedin: 'https://linkedin.com/in/devpatel3',
-    instagram: 'https://instagram.com/devpatel3',
+    // instagram: 'https://instagram.com/devpatel3',
     bio: [
       'Dr. I I Pandya is a renowned structural consultant with a PhD in structural engineering.',
       'He has contributed to the safety and stability of many landmark buildings.'
@@ -59,7 +59,7 @@ const teamMembers = [
     role: 'Technical Support',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752774375/eeozcwyfcp3areuigs1f.png',
     linkedin: 'https://linkedin.com/in/devpatel4',
-    instagram: 'https://instagram.com/devpatel4',
+    instagram: 'https://www.instagram.com/codinggita/',
     bio: [
       'CodingGita is an educational institution focused on technology, specifically bridging the gap between academic learning and industry practices. They offer programs designed to equip students with practical skills and insights relevant to the tech industry, with a strong emphasis on real-world applications and project-based learning. According to CodingGita, their goal is to make students valuable assets in the technology sector. ',
     ]
@@ -69,7 +69,7 @@ const teamMembers = [
     role: 'Vastu consultant',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1753016169/g106wse7jiyt1mygdxyz.jpg',
     linkedin: 'https://linkedin.com/in/devpatel5',
-    instagram: 'https://instagram.com/devpatel5',
+    // instagram: 'https://instagram.com/devpatel5',
     bio: [
       'Dr. Harsh Patel is a leading Vastu consultant, helping clients achieve harmony in their living and working spaces.',
       'He combines traditional wisdom with modern science for optimal results.'
@@ -80,7 +80,7 @@ const teamMembers = [
     role: 'Software Developer Engineer',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1752820162/lploedbjhmhoj4oaom0e.jpg',
     portfolio: 'https://devpatel-portfolioandcontacts.netlify.app/', 
-    linkedin: 'https://linkedin.com/in/devpatel6',
+    linkedin: 'https://linkedin.com/in/devpatel2139',
     bio: [
       'Dev Patel is a skilled software developer engineer with a strong background in web and mobile applications.',
       'He is passionate about building scalable, user-friendly solutions and is always eager to learn new technologies.'

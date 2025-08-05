@@ -52,13 +52,13 @@ const Footer = () => {
                 className="flex items-center gap-2 cursor-pointer hover:text-[#a3856a] transition-colors"
                 onClick={() => window.open('https://maps.app.goo.gl/CKKfwbYR6vsJKzC37', '_blank')}
               >
-                <FaMapMarkerAlt /> Vadodra Office Address
+                <FaMapMarkerAlt /> Ff-04 sidheshwar highland, near NH -48 , Vadodara.
               </li>
               <li 
                 className="flex items-center gap-2 cursor-pointer hover:text-[#a3856a] transition-colors"
                 onClick={() => window.open('https://maps.app.goo.gl/FCnxfbph5erpoN9A8', '_blank')}
               >
-                <FaMapMarkerAlt /> Limdi Office Address
+                <FaMapMarkerAlt /> Deepnagar society, limdi-389180.
               </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt />

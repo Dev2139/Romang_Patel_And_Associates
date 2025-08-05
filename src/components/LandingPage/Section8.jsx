@@ -24,13 +24,13 @@ const ReviewCard = ({ name, location, review }) => (
 const Section8 = () => {
   const reviews = [
     {
-      name: 'Aarav Mehta',
+      name: 'Dipakbhai Muniya',
       location: 'Ahmedabad, Gujarat',
       review:
         'Our firm blends visionary design with enduring quality, creating spaces that inspire and uplift communities. With every project, we strive to balance innovation, sustainability, and functionality, ensuring that each environment is both beautiful and purposeful. Our commitment to excellence is reflected in the trust our clients place in us and the lasting impact of our work. We believe in close collaboration, transparent communication, and delivering results that exceed expectations.',
     },
     {
-      name: 'Priya Shah',
+      name: 'Dr. Ruchi Patel',
       location: 'Surat, Gujarat',
       review:
         'We approach each project as a unique opportunity to deliver timeless, functional, and beautiful spaces. Our team collaborates closely with clients to transform their ideas into environments that exceed expectations. Through creativity, expertise, and attention to detail, we create architectural solutions that leave a lasting impression and stand the test of time. Every detail is thoughtfully considered to ensure a seamless and rewarding experience.',

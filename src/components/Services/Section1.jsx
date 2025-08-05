@@ -5,7 +5,7 @@ const About = () => {
     <div
       className="w-full bg-cover bg-center py-12 mb-12"
       style={{
-        backgroundImage: "url(https://res.cloudinary.com/dsddldquo/image/upload/v1752657304/r6l5zjvbgfasjdqy0dvh.png)"
+        backgroundImage: "url(https://res.cloudinary.com/dsddldquo/image/upload/v1754401674/cdks2q3nlj9d5k0pmunc.png)"
       }}
     >
       <div className="container mx-auto py-12 px-4">

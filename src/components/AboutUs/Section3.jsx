@@ -8,7 +8,7 @@ const Section3 = () => {
         {/* Left: Image */}
         <div className="w-full md:w-1/2 h-[300px] md:h-auto relative min-h-[400px]">
           <img
-            src="https://res.cloudinary.com/dsddldquo/image/upload/v1752745435/vsb4qaylzqlxykyxqqyl.png"
+            src="https://res.cloudinary.com/dsddldquo/image/upload/v1753291677/pzhdokc831uhmmwvpf5e.jpg"
             alt="About Us"
             className="absolute inset-0 w-full h-full object-cover"
           />

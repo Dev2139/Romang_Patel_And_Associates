@@ -6,9 +6,9 @@ import Slide3 from '../../assets/gallery-5.jpg';
 
 // Placeholder images (replace with your actual image URLs)
 const carouselImages = [
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468479/zdkzebhi7zkxyzuxobtw.png',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468807/gb4emnsxohbagabxnrvq.png',
-  'https://res.cloudinary.com/dsddldquo/image/upload/v1753468902/spgka1oxvyoso4igyy0b.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753349228/gmrmmqs2hhdka8qjkdps.jpg',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753290203/lvsnidf22tvupuo2sbbp.png',
+  'https://res.cloudinary.com/dsddldquo/image/upload/v1753290206/cvs64jcmgfgjbqim8eqo.png',
 ];
 
 // Thumbnails for the dots
@@ -72,7 +72,7 @@ const HeaderCarousel = () => {
   };
 
   return (
-    <div className="relative w-full p-0 pb-20 md:pb-20 sm:pb-10">
+    <div className="relative w-full p-0 pb-4 md:pb-4 sm:pb-4">
       {/* Counter Display */}
       {/* <div className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
         <span className="text-white text-2xl md:text-2xl sm:text-lg font-bold">
@@ -99,10 +99,10 @@ const HeaderCarousel = () => {
               <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-12">
                 <div className="flex justify-center sm:justify-start">
                   <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 text-center sm:text-left">
-                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-8xl font-extrabold text-black leading-tight animate-slideInDown drop-shadow-2xl">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-8xl font-extrabold text-white leading-tight animate-slideInDown drop-shadow-2xl">
                       {carouselContent[index].heading}
                     </h1>
-                    <p className="text-xs sm:text-sm md:text-lg font-medium text-black mt-4 md:mt-6 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto sm:mx-0 animate-slideInDown drop-shadow-2xl">
+                    <p className="text-xs sm:text-sm md:text-lg font-medium text-white mt-4 md:mt-6 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto sm:mx-0 animate-slideInDown drop-shadow-2xl">
                       {carouselContent[index].description}
                     </p>
                     

@@ -17,7 +17,7 @@ const Projects = () => {
         <Section1/>
         <Section6/>
         <Section3/>
-        <Section9/>
+        {/* <Section9/> */}
         <Footer/>
 
     </div>
