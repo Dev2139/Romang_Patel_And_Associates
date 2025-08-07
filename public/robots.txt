@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://romangpatelandassociates.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all important directories
+Allow: /src/
+Allow: /public/
+Allow: /assets/
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft/
+
+# Allow search engines to index all content
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /contact
+Allow: /quote
+Allow: /careers 
