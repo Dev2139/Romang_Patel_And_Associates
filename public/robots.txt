@@ -7,10 +7,18 @@ Sitemap: https://romangpatelandassociates.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all important directories
-Allow: /src/
-Allow: /public/
+# Allow all important directories and routes
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /contact
+Allow: /quote
+Allow: /careers
+
+# Allow static assets
 Allow: /assets/
+Allow: /src/
 
 # Disallow admin or private areas (if any)
 Disallow: /admin/
@@ -18,10 +26,21 @@ Disallow: /private/
 Disallow: /temp/
 Disallow: /draft/
 
-# Allow search engines to index all content
-Allow: /about
-Allow: /services
-Allow: /projects
-Allow: /contact
-Allow: /quote
-Allow: /careers 
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Ensure JavaScript and CSS files are crawlable for better rendering
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg 
