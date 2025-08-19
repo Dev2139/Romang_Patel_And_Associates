@@ -7,9 +7,10 @@ const Footer = () => {
   const form = useRef();
   const [status, setStatus] = useState('');
   const [email, setEmail] = useState('');
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
 
   const validateEmail = (email) => {
-    // Simple email regex
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
@@ -24,8 +25,17 @@ const Footer = () => {
       setStatus('Please enter a valid email address.');
       return;
     }
-    // Redirect to Google Drive link
-    window.location.href = 'https://drive.google.com/'; // Replace with your actual Google Drive link
+    window.location.href = 'https://drive.google.com/';
+  };
+
+  const openPopup = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedImage('');
   };
 
   return (
@@ -34,18 +44,18 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between gap-8">
           {/* Logo & Address */}
           <div className="flex-1 min-w-[200px]">
-          <Link to="/" className="flex items-center gap-3 px-2 py-1 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
-        <img
-          src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
-          alt="Logo"
-          className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110"
-        />
-        <span>
-          <span className="text-[#8B5C2A]">ROMANG</span>
-          <span className="text-[#8B5C2A]"> PATEL</span>
-          <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
-        </span>
-      </Link>
+            <Link to="/" className="flex items-center gap-3 px-2 py-1 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
+              <img
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
+                alt="Logo"
+                className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110"
+              />
+              <span>
+                <span className="text-[#8B5C2A]">ROMANG</span>
+                <span className="text-[#8B5C2A]"> PATEL</span>
+                <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
+              </span>
+            </Link>
             <h2 className="text-lg font-bold mb-2">Address</h2>
             <ul className="space-y-2 text-base">
               <li 
@@ -63,7 +73,7 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <FaPhoneAlt />
                 <a
-                  href="tel:+9198242199727"
+                  href="tel:+919824219727"
                   className="hover:underline text-blue-700"
                 >
                   +91 9824219727
@@ -81,61 +91,98 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            {/* Social Icons */}
             <div className="flex items-center gap-3 mt-6">
-              {/* <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#1da1f2] transition-colors" aria-label="Twitter"><FaTwitter /></a> */}
               <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#0077b5] transition-colors" aria-label="LinkedIn"><FaLinkedinIn /></a>
-              <a href=" https://wa.me/919824219727" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#4caf50] transition-colors" aria-label="Whatsapp"><FaWhatsapp /></a>
+              <a href="https://wa.me/919824219727" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#4caf50] transition-colors" aria-label="Whatsapp"><FaWhatsapp /></a>
               <a href="https://www.instagram.com/rome.sign" className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow text-2xl hover:text-[#e1306c] transition-colors" aria-label="Instagram"><FaInstagram /></a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="flex-1 min-w-[180px]">
-  <h2 className="text-lg font-bold mb-2">Quick Links</h2>
-  <ul className="space-y-1 text-base">
-    <li>
-      <Link to="/about" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
-        <FaArrowRight className="text-xs" /> About Us
-      </Link>
-    </li>
-    <li>
-      <Link to="/contact" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
-        <FaArrowRight className="text-xs" /> Contact Us
-      </Link>
-    </li>
-    <li>
-      <Link to="/services" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
-        <FaArrowRight className="text-xs" /> Our Services
-      </Link>
-    </li>
-    <li>
-      <Link to="/projects" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
-        <FaArrowRight className="text-xs" /> Our Projects
-      </Link>
-    </li>
-    {/* <li>
-      <Link to="/support" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
-        <FaArrowRight className="text-xs" /> Support
-      </Link>
-    </li> */}
-  </ul>
-</div>
-
+            <h2 className="text-lg font-bold mb-2">Quick Links</h2>
+            <ul className="space-y-1 text-base">
+              <li>
+                <Link to="/about" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+                  <FaArrowRight className="text-xs" /> About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+                  <FaArrowRight className="text-xs" /> Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+                  <FaArrowRight className="text-xs" /> Our Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects" className="flex items-center gap-2 hover:text-[#a3856a] transition-colors">
+                  <FaArrowRight className="text-xs" /> Our Projects
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           {/* Project Gallery */}
           <div className="flex-1 min-w-[220px]">
             <h2 className="text-lg font-bold mb-2">Project Gallery</h2>
             <div className="grid grid-cols-3 gap-2 mt-2">
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753267252/nn6b0qehbbchqbbzokwg.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753271247/mnb7cujfhhbcrrwegeye.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753287215/vrlwsozqfgjw8b0hf5tq.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753288022/ytomruchpzspwgcb5yon.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753292055/zmxzxiqlndcuboqe9rwj.jpg" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753346703/dfg08cths86hlzdmslgz.jpg" alt="Gallery 3" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348279/rvvs3xelihnafl9612ug.jpg" alt="Gallery 4" className="w-16 h-16 rounded object-cover" />
-              <img src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348619/oxzywomebcyg5pu3pleh.jpg" alt="Gallery 5" className="w-16 h-16 rounded object-cover" />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753267252/nn6b0qehbbchqbbzokwg.jpg" 
+                alt="Gallery 3" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753267252/nn6b0qehbbchqbbzokwg.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753271247/mnb7cujfhhbcrrwegeye.jpg" 
+                alt="Gallery 4" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753271247/mnb7cujfhhbcrrwegeye.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png" 
+                alt="Gallery 5" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1752659870/edrtv7rxgoaex8rzemfq.png')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753287215/vrlwsozqfgjw8b0hf5tq.jpg" 
+                alt="Gallery 3" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753287215/vrlwsozqfgjw8b0hf5tq.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753288022/ytomruchpzspwgcb5yon.jpg" 
+                alt="Gallery 4" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753288022/ytomruchpzspwgcb5yon.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753292055/zmxzxiqlndcuboqe9rwj.jpg" 
+                alt="Gallery 5" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753292055/zmxzxiqlndcuboqe9rwj.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753346703/dfg08cths86hlzdmslgz.jpg" 
+                alt="Gallery 3" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753346703/dfg08cths86hlzdmslgz.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348279/rvvs3xelihnafl9612ug.jpg" 
+                alt="Gallery 4" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753348279/rvvs3xelihnafl9612ug.jpg')}
+              />
+              <img 
+                src="https://res.cloudinary.com/dsddldquo/image/upload/v1753348619/oxzywomebcyg5pu3pleh.jpg" 
+                alt="Gallery 5" 
+                className="w-16 h-16 rounded object-cover cursor-pointer hover:opacity-80 transition-opacity" 
+                onClick={() => openPopup('https://res.cloudinary.com/dsddldquo/image/upload/v1753348619/oxzywomebcyg5pu3pleh.jpg')}
+              />
             </div>
           </div>
 
@@ -158,6 +205,26 @@ const Footer = () => {
             {status && <div className="text-sm mt-2 text-[#a3856a]">{status}</div>}
           </div>
         </div>
+
+        {/* Popup Modal */}
+        {isPopupOpen && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={closePopup}>
+            <div className="relative bg-white rounded-lg p-4 max-w-sm w-full" onClick={e => e.stopPropagation()}>
+              <button 
+                className="absolute top-2 right-2 text-black hover:text-[#a3856a] transition-colors"
+                onClick={closePopup}
+                aria-label="Close"
+              >
+                <AiOutlineClose size={24} />
+              </button>
+              <img 
+                src={selectedImage} 
+                alt="Selected Project" 
+                className="w-full h-48 object-contain rounded"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Divider */}
         <div className="border-t border-black/50 my-6"></div>
