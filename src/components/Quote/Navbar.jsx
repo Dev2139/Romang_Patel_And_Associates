@@ -12,8 +12,8 @@ const Navbar = () => {
   return (
     <nav className="bg-[#f5f0e6] shadow-md sticky top-0 z-50 flex items-center justify-between px-2 lg:pr-0 lg:pl-3 py-2">
       {/* Logo and Hamburger Menu Container */}
-      <div className="flex items-center justify-between w-full lg:w-auto">
-        <Link to="/" className="flex items-center gap-3 px-2 py-1 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
+      <Link to="/" className="flex items-center justify-between gap-3 px-3 py-2 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
+        <div className="flex items-center gap-3">
           <img
             src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
             alt="Logo"
@@ -24,11 +24,11 @@ const Navbar = () => {
             <span className="text-[#8B5C2A]"> PATEL</span>
             <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
           </span>
-        </Link>
+        </div>
         {/* Hamburger Menu for Mobile */}
         <button
           onClick={toggleMenu}
-          className="lg:hidden text-gray-600 focus:outline-none px-2"
+          className="lg:hidden text-gray-600 focus:outline-none"
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-      </div>
+      </Link>
 
       {/* Navigation Links and Button (Grouped on the Right) */}
       <div
