@@ -37,7 +37,7 @@ const teamMembers = [
     role: 'Principal Architect',
     img: 'https://res.cloudinary.com/dsddldquo/image/upload/v1754400384/xg6w75tf0by9kbhyhs0w.jpg',
     linkedin: 'https://www.linkedin.com/in/romang-patel-1702b7230/',
-    instagram: 'https://www.instagram.com/rome.sign',
+    instagram: 'https://www.instagram.com/romangpatelandassociates',
     bio: [
       'Romang Patel is a visionary architect with a passion for sustainable and innovative design.',
       'He has worked on a variety of commercial and residential projects, always pushing the boundaries of creativity.'
