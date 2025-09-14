@@ -12,19 +12,29 @@ const Navbar = () => {
   return (
     <nav className="bg-[#f5f0e6] shadow-md sticky top-0 z-50 flex items-center justify-between px-2 lg:pr-0 lg:pl-3 py-2">
       {/* Logo and Hamburger Menu Container */}
-      <Link to="/" className="flex items-center justify-between gap-3 px-3 py-2 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide" style={{ fontFamily: 'serif' }}>
+      <div
+        className="flex items-center justify-between gap-3 px-3 py-2 bg-[#E4CBBA] rounded-lg shadow font-extrabold text-lg tracking-wide w-full lg:w-auto"
+        style={{ fontFamily: 'serif' }}
+      >
+        {/* Logo Image (clickable) + Text (not clickable) */}
         <div className="flex items-center gap-3">
-          <img
-            src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
-            alt="Logo"
-            className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110"
-          />
-          <span>
+          {/* Only the image is wrapped in Link */}
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dsddldquo/image/upload/v1753070721/kilmgvedc34rplxbvvkl.png"
+              alt="Logo"
+              className="w-12 h-12 object-cover shadow-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
+            />
+          </Link>
+
+          {/* Text is just static, no navigation */}
+          <span className="select-none">
             <span className="text-[#8B5C2A]">ROMANG</span>
             <span className="text-[#8B5C2A]"> PATEL</span>
             <span className="text-[#8B5C2A]"> & ASSOCIATES</span>
           </span>
         </div>
+
         {/* Hamburger Menu for Mobile */}
         <button
           onClick={toggleMenu}
@@ -40,7 +50,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-      </Link>
+      </div>
 
       {/* Navigation Links and Button (Grouped on the Right) */}
       <div
@@ -71,7 +81,9 @@ const Navbar = () => {
             to="/quote"
             className="block lg:inline-block text-black hover:text-gray-600 font-semibold flex flex-row items-stretch space-x-2 -my-2"
           >
-            <span className='flex items-center gap-3 px-6 py-3 bg-[#E4CBBA] text-lg rounded-lg shadow-md'>GET A QUOTE <FaArrowRight size={22} /></span>
+            <span className="flex items-center gap-3 px-6 py-3 bg-[#E4CBBA] text-lg rounded-lg shadow-md">
+              GET A QUOTE <FaArrowRight size={22} />
+            </span>
           </Link>
         </div>
       </div>
