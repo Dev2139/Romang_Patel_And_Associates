@@ -50,7 +50,7 @@ const HeaderCarousel = () => {
   useEffect(() => {
     const duration = 2000; // 2 seconds
     const steps = 60; // 60 steps for smooth animation
-    // const increment = 3 / steps; // Final number is 3
+    const increment = 3 / steps; // Final number is 3
     const stepDuration = duration / steps;
 
     let currentStep = 0;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { supabase } from "../../supabaseClient";
 
 const ProjectGallery = () => {
   const { projectId } = useParams();
@@ -12,17 +13,23 @@ const ProjectGallery = () => {
   const [activeImageIdx, setActiveImageIdx] = useState(0);
 
   useEffect(() => {
-    fetch("/projects.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load projects");
-        return res.json();
-      })
-      .then((data) => {
-        const found = data.find((p) => String(p.id) === String(projectId));
-        setProject(found);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+    const fetchProject = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('id', projectId)
+        .single();
+      
+      if (error) {
+        setError(error.message);
+      } else {
+        setProject(data);
+      }
+      setLoading(false);
+    };
+
+    fetchProject();
   }, [projectId]);
 
   const openModal = (idx) => {

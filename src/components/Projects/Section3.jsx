@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
 
 const categories = [
   "All",
@@ -44,20 +45,21 @@ const Section3 = () => {
   }, []);
 
   useEffect(() => {
-    setLoading(true);
-    fetch("/projects.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load projects");
-        return res.json();
-      })
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    const fetchProjects = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*');
+      
+      if (error) {
+        setError(error.message);
+      } else {
+        setProjects(data || []);
+      }
+      setLoading(false);
+    };
+
+    fetchProjects();
   }, []);
 
   // Reset subcategory + page when category changes

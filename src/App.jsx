@@ -9,6 +9,8 @@ import Quote from './components/Quote/Contacts'
 import ScrollToTop from './components/ScrollToTop';
 import Careers from './components/Careers/Careers';
 import ProjectGallery from './components/Projects/ProjectGallery';
+import AdminLogin from './components/Admin/AdminLogin';
+import AdminDashboard from './components/Admin/AdminDashboard';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/contact" element={<Contacts />} />
         <Route path="/quote" element={<Quote />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </BrowserRouter>
   );
